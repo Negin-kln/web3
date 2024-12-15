@@ -21,4 +21,4 @@ w = z ^ w;
 z = z ^ w;
 var z = Number(prompt("enter z"));
 var w = Number(prompt("enter w"));
-// ---------programiz.exp6
+
