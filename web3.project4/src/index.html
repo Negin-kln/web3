@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Vazirmatn", serif;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <main>
+      <nav class="w-full h-[50px]">
+        <button onclick="showSidenav()" class="font-bold text-3xl p-4">
+          <i class="fa fa-bars text-orange-500"></i>
+        </button>
+      </nav>
+      <aside
+        id="sidenav"
+        class="w-[300px] h-full shadow-md bg-stone-900 fixed top-0 -right-[300px]"
+        style="transition: 0.5s"
+      >
+        <div
+          class="text-[20px] border-b border-stone-50 text-orange-500 py-2 px-4 flex justify-between items-center"
+        >
+          <span>پروفایل</span>
+          <button onclick="hiddenSidenav()">
+            <i class="fa fa-times-circle"></i>
+          </button>
+        </div>
+        <div class="bg-custom-pattern">
+          <div class="p-4 flex justify-between items-center">
+            <div class="relative inline-block">
+              <img
+                src="../assets/image/profile.jfif"
+                class="w-[70px] h-[70px] rounded-full"
+                alt=""
+              />
+              <i
+                class="fa fa-star text-yellow-400 absolute left-0 bottom-1"
+              ></i>
+            </div>
+          </div>
+          <div class="px-4 flex-col text-stone-200">
+            <span>نگین کلانتری</span>
+            <span
+              ><a href="mailto:neginkalantari1999@gmail.com"
+                >neginkalantari1999@gmail.com</a
+              ></span
+            >
+            <div class="text-xl">
+              <a
+                href="mailto:neginkalantari1999@gmail.com"
+                class="hover:text-orange-600"
+                ><i class="fa fa-google-plus-official"></i
+              ></a>
+              <a
+                href="https://github.com/Negin-kln"
+                class="hover:text-orange-600"
+                ><i class="fa fa-github"></i
+              ></a>
+              <a
+                href="https://gitlab.com/Negin-kln"
+                class="hover:text-orange-600"
+                ><i class="fa fa-gitlab"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="py-[20px] px-4">
+          <ul class="text-orange-500 text-[18px]">
+            <li class="py-2 hover:pr-5 border-b border-sky-700">
+              <a href="#"><i class="fa fa-home pl-2 text-red-700"></i>خانه</a>
+            </li>
+            <li class="py-2 hover:pr-5 border-b border-sky-700">
+              <a href="#"
+                ><i class="fa fa-user-circle-o pl-2 text-red-700"></i>درباره
+                من</a
+              >
+            </li>
+            <li class="py-2 hover:pr-5 border-b border-sky-700">
+              <a href="#"
+                ><i class="fa fa-file-text pl-2 text-red-700"></i>رزومه</a
+              >
+            </li>
+            <li class="py-2 hover:pr-5 border-b border-sky-700">
+              <a href="#"><i class="fa fa-cog pl-2 text-red-700"></i>خدمات</a>
+            </li>
+            <li class="py-2 hover:pr-5 border-b border-sky-700">
+              <a href="#"
+                ><i class="fa fa-credit-card-alt pl-2 text-red-700"></i>حقوق
+              </a>
+            </li>
+            <li class="py-2 hover:pr-5">
+              <a href="#"
+                ><i class="fa fa-volume-control-phone pl-2 text-red-700"></i>راه
+                های ارتباطی</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <script src="../assets/js/custom7.js"></script>
+  </body>
+</html>
