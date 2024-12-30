@@ -4,12 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="grid grid-flow-row"><div class="row-span-1">
-        
-      </div></div>
+      <div class="grid grid-flow-col grid-rows-2 gap-2 py-4">
+        <div class="row-span-1 mx-auto">
+          <div
+            id="count"
+            class="border border-gray-800 bg-gray-200 text-gray-800 rounded-md w-[50px] h-[50px] flex justify-center items-center text-xl"
+          >
+            0
+          </div>
+        </div>
+        <div class="row-span-1 mx-auto">
+          <button
+            onclick="counterDown()"
+            id="counter-down"
+            class="border-0 bg-red-800 text-white rounded-lg py-1 px-3 text-md"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+          <button
+            onclick="counterUp()"
+            id="counter-up"
+            class="border-0 bg-green-800 text-white rounded-lg py-1 px-3 text-md"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
+    <script src="../assets/js/custom7.js"></script>
   </body>
 </html>
