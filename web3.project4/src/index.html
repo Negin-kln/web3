@@ -33,87 +33,89 @@
       </nav>
       <aside
         id="sidenav"
-        class="w-[300px] h-full shadow-md bg-stone-900 fixed top-0 -right-[300px]"
+        class="container w-[300px] h-full shadow-md bg-stone-900 fixed top-0 -right-[300px]"
         style="transition: 0.5s"
       >
-        <div
-          class="text-[20px] border-b border-stone-50 text-orange-500 py-2 px-4 flex justify-between items-center"
-        >
-          <span>پروفایل</span>
-          <button onclick="hiddenSidenav()">
-            <i class="fa fa-times-circle"></i>
-          </button>
-        </div>
-        <div class="bg-custom-pattern">
-          <div class="p-4 flex justify-between items-center">
-            <div class="relative inline-block">
-              <img
-                src="../assets/image/profile.jfif"
-                class="w-[70px] h-[70px] rounded-full"
-                alt=""
-              />
-              <i
-                class="fa fa-star text-yellow-400 absolute left-0 bottom-1"
-              ></i>
+        <div class="grid grid-flow-row">
+          <div
+            class="row-span-1 text-[20px] border-b border-stone-50 text-orange-500 py-2 px-4 flex justify-between items-center"
+          >
+            <span>پروفایل</span>
+            <button onclick="hiddenSidenav()">
+              <i class="fa fa-times-circle"></i>
+            </button>
+          </div>
+          <div class="row-span-1 bg-custom-pattern">
+            <div class="p-4 flex justify-between items-center">
+              <div class="relative inline-block">
+                <img
+                  src="../assets/image/profile.jfif"
+                  class="w-[70px] h-[70px] rounded-full"
+                  alt=""
+                />
+                <i
+                  class="fa fa-star text-yellow-400 absolute left-0 bottom-1"
+                ></i>
+              </div>
+            </div>
+            <div class="px-4 flex-col text-stone-200">
+              <span>نگین کلانتری</span>
+              <span
+                ><a href="mailto:neginkalantari1999@gmail.com"
+                  >neginkalantari1999@gmail.com</a
+                ></span
+              >
+              <div class="text-xl">
+                <a
+                  href="mailto:neginkalantari1999@gmail.com"
+                  class="hover:text-orange-600"
+                  ><i class="fa fa-google-plus-official"></i
+                ></a>
+                <a
+                  href="https://github.com/Negin-kln"
+                  class="hover:text-orange-600"
+                  ><i class="fa fa-github"></i
+                ></a>
+                <a
+                  href="https://gitlab.com/Negin-kln"
+                  class="hover:text-orange-600"
+                  ><i class="fa fa-gitlab"></i
+                ></a>
+              </div>
             </div>
           </div>
-          <div class="px-4 flex-col text-stone-200">
-            <span>نگین کلانتری</span>
-            <span
-              ><a href="mailto:neginkalantari1999@gmail.com"
-                >neginkalantari1999@gmail.com</a
-              ></span
-            >
-            <div class="text-xl">
-              <a
-                href="mailto:neginkalantari1999@gmail.com"
-                class="hover:text-orange-600"
-                ><i class="fa fa-google-plus-official"></i
-              ></a>
-              <a
-                href="https://github.com/Negin-kln"
-                class="hover:text-orange-600"
-                ><i class="fa fa-github"></i
-              ></a>
-              <a
-                href="https://gitlab.com/Negin-kln"
-                class="hover:text-orange-600"
-                ><i class="fa fa-gitlab"></i
-              ></a>
-            </div>
+          <div class="row-span-1 py-[20px] px-4">
+            <ul class="text-orange-500 text-[18px]">
+              <li class="py-2 hover:pr-5 border-b border-sky-700">
+                <a href="#"><i class="fa fa-home pl-2 text-red-700"></i>خانه</a>
+              </li>
+              <li class="py-2 hover:pr-5 border-b border-sky-700">
+                <a href="#"
+                  ><i class="fa fa-user-circle-o pl-2 text-red-700"></i>درباره
+                  من</a
+                >
+              </li>
+              <li class="py-2 hover:pr-5 border-b border-sky-700">
+                <a href="#"
+                  ><i class="fa fa-file-text pl-2 text-red-700"></i>رزومه</a
+                >
+              </li>
+              <li class="py-2 hover:pr-5 border-b border-sky-700">
+                <a href="#"><i class="fa fa-cog pl-2 text-red-700"></i>خدمات</a>
+              </li>
+              <li class="py-2 hover:pr-5 border-b border-sky-700">
+                <a href="#"
+                  ><i class="fa fa-credit-card-alt pl-2 text-red-700"></i>حقوق
+                </a>
+              </li>
+              <li class="py-2 hover:pr-5">
+                <a href="#"
+                  ><i class="fa fa-volume-control-phone pl-2 text-red-700"></i
+                  >راه های ارتباطی</a
+                >
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="py-[20px] px-4">
-          <ul class="text-orange-500 text-[18px]">
-            <li class="py-2 hover:pr-5 border-b border-sky-700">
-              <a href="#"><i class="fa fa-home pl-2 text-red-700"></i>خانه</a>
-            </li>
-            <li class="py-2 hover:pr-5 border-b border-sky-700">
-              <a href="#"
-                ><i class="fa fa-user-circle-o pl-2 text-red-700"></i>درباره
-                من</a
-              >
-            </li>
-            <li class="py-2 hover:pr-5 border-b border-sky-700">
-              <a href="#"
-                ><i class="fa fa-file-text pl-2 text-red-700"></i>رزومه</a
-              >
-            </li>
-            <li class="py-2 hover:pr-5 border-b border-sky-700">
-              <a href="#"><i class="fa fa-cog pl-2 text-red-700"></i>خدمات</a>
-            </li>
-            <li class="py-2 hover:pr-5 border-b border-sky-700">
-              <a href="#"
-                ><i class="fa fa-credit-card-alt pl-2 text-red-700"></i>حقوق
-              </a>
-            </li>
-            <li class="py-2 hover:pr-5">
-              <a href="#"
-                ><i class="fa fa-volume-control-phone pl-2 text-red-700"></i>راه
-                های ارتباطی</a
-              >
-            </li>
-          </ul>
         </div>
       </aside>
     </main>

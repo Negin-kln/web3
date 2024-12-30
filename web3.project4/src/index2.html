@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        font-family: "Vazirmatn", serif;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <main>
+      <div class="container">
+        <div class="grid">
+          <div class="row-span-1 p-4">
+            <button
+              onclick="showModal()"
+              class="border-2 border-red-600 bg-red-200 text-red-600 px-4 py-2 rounded-md"
+            >
+              ثبت نام کنید
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="modal"
+        class="hidden container max-w-[700px] bg-red-50 border-2 border-red-600 rounded-lg m-auto"
+      >
+        <div class="grid grid-flow-col grid-rows-6">
+          <div
+            class="row-span-1 border-b-2 border-red-600 p-4 text-xl flex justify-between items-center text-red-800"
+          >
+            <span>ثبت نام</span>
+            <button onclick="hiddenModal()">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="row-span-4 border-b-2 border-red-600 p-4">
+            <form action="">
+              <div class="grid grid-flow-row gap-y-4">
+                <div class="row-span-1">
+                  <div class="grid grid-flow-col grid-cols-2">
+                    <div class="col-span-1 mx-auto">
+                      <label for="name">نام:</label><br />
+                      <input
+                        type="text"
+                        id="name"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                    <div class="col-span-1 mx-auto">
+                      <label for="lname">نام خانوادگی:</label><br />
+                      <input
+                        type="text"
+                        id="lname"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row-span-1">
+                  <div class="grid grid-flow-col grid-cols-2">
+                    <div class="col-span-1 mx-auto">
+                      <label for="fathername">نام پدر:</label><br />
+                      <input
+                        type="text"
+                        id="fathername"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                    <div class="col-span-1 mx-auto">
+                      <label for="TEL">شماره تلفن:</label><br />
+                      <input
+                        type="text"
+                        id="TEL"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row-span-1">
+                  <div class="grid grid-flow-col grid-cols-2">
+                    <div class="col-span-1 mx-auto">
+                      <label for="Nationalcode">کد ملی:</label><br />
+                      <input
+                        type="text"
+                        id="Nationalcode"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                    <div class="col-span-1 mx-auto">
+                      <label for="fieldofstudy">میزان تحصیلات:</label><br />
+                      <input
+                        type="text"
+                        id="fieldofstudy"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row-span-1">
+                  <div class="grid grid-flow-col grid-cols-2">
+                    <div class="col-span-1 mx-auto">
+                      <label for="average">معدل آخرین مدرک تحصیلی:</label><br />
+                      <input
+                        type="text"
+                        id="average"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                    <div class="col-span-1 mx-auto">
+                      <label for="Uni">دانشگاه محل تحصیل:</label><br />
+                      <input
+                        type="text"
+                        id="Uni"
+                        class="border bg-red-300 rounded-md active:shadow-sm outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row-span-1 mr-auto my-auto pl-6">
+            <button
+              onclick="hiddenModal()"
+              class="border-2 border-green-900 py-1 px-4 text-xl text-green-100 rounded-md bg-green-900 hover:border-green-600 hover:bg-green-600"
+            >
+              ثبت
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/custom7.js"></script>
+  </body>
+</html>
