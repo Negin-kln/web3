@@ -19,11 +19,11 @@ function hiddenModal() {
 // ----------the counter
 function counterUp() {
   let counterUp = parseInt(document.getElementById("count").innerText);
-  counterUp = counterUp + 1;
+  counterUp++;
   document.getElementById("count").innerText = counterUp;
 }
 function counterDown() {
   let counterDown = parseInt(document.getElementById("count").innerText);
-  counterDown = counterDown - 1;
+  counterDown--;
   document.getElementById("count").innerText = counterDown;
 }
