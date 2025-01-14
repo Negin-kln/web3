@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      table {
+        width: 100%;
+      }
+      th,
+      td,
+      table {
+        border: 1px solid gray;
+        border-collapse: collapse;
+        padding: 4px;
+        text-align: center;
+      }
+      td {
+        color: blue;
+      }
+      .calculate {
+        padding: 5px;
+        margin: 10px;
+        border: 2px solid blue;
+        border-radius: 10px;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        font-size: large;
+      }
+      .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: black;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div style="padding: 10px">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <label for="age">Age:</label>
+        <input type="text" id="age" />
+        <button onclick="addStds()">submit</button>
+      </div>
+      <table id="stds">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </table>
+      <button onclick="calcAge()" class="calculate">
+        Calculate Age Statistics
+      </button>
+      <div class="box">
+        <div id="resultAverageAge"></div>
+        <div id="resultMaxAge"></div>
+        <div id="resultMinAge"></div>
+      </div>
+    </main>
+    <script>
+      var stds = [
+        { name: "negin", age: 25 },
+        { name: "kimia", age: 32 },
+        { name: "mahsa", age: 18 },
+      ];
+      function fillTable() {
+        let stdsTable = document.getElementById("stds");
+        stdsTable.innerHTML = `<tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>`;
+        for (let i = 0; i < stds.length; i++) {
+          stdsTable.innerHTML += `<tr>
+          <td>${i}</td>
+          <td>${stds[i].name}</td>
+          <td>${stds[i].age}</td>
+        </tr>`;
+        }
+      }
+      fillTable();
+      function addStds() {
+        let stdName = document.getElementById("name").value;
+        let stdAge = document.getElementById("age").value;
+        stds.push({ name: stdName, age: parseInt(stdAge) });
+        fillTable();
+      }
+      function calcAge() {
+        let maxAge = stds[0].age;
+        let minAge = stds[0].age;
+        let sumAge = 0;
+        for (let i = 0; i < stds.length; i++) {
+          if (maxAge < stds[i].age) {
+            maxAge = stds[i].age;
+          }
+          if (minAge > stds[i].age) {
+            minAge = stds[i].age;
+          }
+          sumAge += stds[i].age;
+        }
+        let averageAge = sumAge / stds.length;
+        document.getElementById(
+          "resultAverageAge"
+        ).innerHTML = `average = ${averageAge}`;
+        document.getElementById("resultMaxAge").innerHTML = `max = ${maxAge}`;
+        document.getElementById("resultMinAge").innerHTML = `min = ${minAge}`;
+      }
+    </script>
+  </body>
+</html>
