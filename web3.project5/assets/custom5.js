@@ -132,7 +132,7 @@ const result7 = countVowel(string);
 console.log(result7);
 // ---------programiz.exp40(2)
 const vowels = ["a", "e", "i", "o", "u"];
-function countVowel(str) {
+function countVowel1(str) {
   let count = 0;
   for (let letter of str.toLowerCase()) {
     if (vowels.includes(letter)) {
@@ -141,5 +141,5 @@ function countVowel(str) {
   }
   return count;
 }
-const result8 = countVowel(string);
+const result8 = countVowel1(string);
 console.log(result8);

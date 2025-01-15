@@ -16,20 +16,25 @@
       th,
       td,
       table {
-        border: 1px solid gray;
+        border: 1px solid black;
         border-collapse: collapse;
         padding: 4px;
         text-align: center;
+        color: rgb(5, 61, 5);
+      }
+      th {
+        background-color: rgb(115, 193, 47);
       }
       td {
-        color: blue;
+        color: rgb(5, 61, 5);
       }
+
       .calculate {
         padding: 5px;
         margin: 10px;
-        border: 2px solid blue;
+        border: 2px solid gray;
         border-radius: 10px;
-        background-color: blue;
+        background-color: gray;
         color: white;
         font-weight: bold;
         font-size: large;
@@ -41,6 +46,27 @@
         color: black;
         font-size: 20px;
       }
+      .submit {
+        border: 1px solid green;
+        color: white;
+        padding: 1px 4px;
+        border-radius: 5px;
+        background-color: green;
+      }
+      .edit {
+        border: 1px solid blue;
+        padding: 4px;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+      }
+      .delete {
+        border: 1px solid red;
+        padding: 4px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -50,13 +76,14 @@
         <input type="text" id="name" />
         <label for="age">Age:</label>
         <input type="text" id="age" />
-        <button onclick="addStds()">submit</button>
+        <button onclick="addOrUpdateStds()" class="submit">submit</button>
       </div>
       <table id="stds">
         <tr>
           <th>ID</th>
           <th>Name</th>
           <th>Age</th>
+          <th>Actions</th>
         </tr>
       </table>
       <button onclick="calcAge()" class="calculate">
