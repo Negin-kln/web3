@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../src/output.css" />
+    <style>
+      * {
+        font-family: "Vazirmatn", serif;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <div
+      class="container border-2 border-purple-950 bg-purple-50 rounded-md max-w-[450px] mx-auto my-[10%]"
+    >
+      <div class="grid grid-rows-1">
+        <h1
+          class="row-span-1 font-bold text-[24px] text-purple-600 border-b-2 border-purple-950 text-center"
+        >
+          ورود به حساب کاربری
+        </h1>
+      </div>
+      <div class="grid grid-flow-row p-3 gap-y-2">
+        <div class="row-span-2">
+          <div class="grid grid-flow-col gap-2">
+            <div class="col-span-1 grid-flow-col text-purple-500">
+              <label for="email" class="col-span-1"
+                ><i class="fa fa-user text-purple-900 pl-1"></i>نام
+                کاربری</label
+              ><span class="text-red-700"> *</span><br />
+              <input
+                id="name"
+                type="text"
+                placeholder="نام کاربری"
+                class="col-span-1 outline outline-2 outline-purple-800 rounded-md pr-2"
+              />
+              <div class="col-span-1 nameText text-red-700"></div>
+            </div>
+            <div class="col-span-1 grid-flow-col text-purple-500">
+              <label for="email" class="col-span-1"
+                ><i class="fa fa-key text-purple-900 pl-1"></i>رمز عبور</label
+              ><span class="text-red-700"> *</span><br />
+              <input
+                id="password"
+                type="password"
+                placeholder="رمز عبور"
+                class="col-span-1 outline outline-2 outline-purple-800 rounded-md pr-2"
+              />
+              <div class="col-span-1 passwordText text-red-700"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row-span-1">
+          <a href="#" class="text-[14px] text-purple-400 hover:text-purple-800"
+            >فراموشی رمز</a
+          >
+        </div>
+        <div class="row-span-1 text-center">
+          <input
+            onclick="handlerClick()"
+            type="submit"
+            value="ورود"
+            class="border-2 border-green-900 bg-green-900 px-4 py-1 rounded-md text-white"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/custom1.js"></script>
+  </body>
+</html>
