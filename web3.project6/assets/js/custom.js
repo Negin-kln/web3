@@ -178,6 +178,6 @@ class Book {
     console.log(`readingTime= ${this.pages * 3}min`);
   }
   applyDiscount() {
-    console.log(`${this.title} 20% off`);
+    console.log(`${this.discount} off`);
   }
 }
