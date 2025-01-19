@@ -14,19 +14,38 @@
       * {
         font-family: Vazirmatn, sans-serif;
       }
+      body {
+        background-color: black;
+      }
       .test {
-        border: 2px solid rgb(83, 21, 21);
+        border: 2px solid #25ccf7;
         border-radius: 10px;
-        width: 250px;
-        background-color: rgb(249, 216, 216);
+        width: 150px;
+        background-color: #182c61;
         padding: 5px 10px;
-        color: rgb(83, 21, 21);
+        color: #25ccf7;
         font-size: 16px;
         text-align: center;
       }
+      .datepicker-plot-area .datepicker-header .btn-next,
+      .datepicker-plot-area .datepicker-header .btn-switch,
+      .datepicker-plot-area .datepicker-header .btn-prev {
+        color: #25ccf7 !important;
+        background-color: #3b3b98 !important;
+        border-radius: 5px;
+      }
+      .datepicker-plot-area .toolbox .btn-today {
+        color: #25ccf7 !important;
+        background-color: #3b3b98 !important;
+        border-radius: 5px;
+        padding-top: 5px;
+      }
       .datepicker-plot-area .selected {
-        background-color: rgb(83, 21, 21) !important;
-        color: white !important;
+        background-color: #25ccf7 !important;
+        color: #182c61 !important;
+      }
+      .datepicker-plot-area .datepicker-day-view .header-row-cell {
+        color: #3b3b98 !important;
       }
       .datepicker-plot-area
         .datepicker-day-view
@@ -36,15 +55,27 @@
       .datepicker-plot-area .datepicker-day-view .table-days td span:hover,
       .datepicker-plot-area .datepicker-year-view .year-item:hover,
       .datepicker-plot-area .datepicker-month-view .month-item:hover {
-        background-color: rgb(249, 216, 216) !important;
-        color: rgb(83, 21, 21) !important;
+        background-color: #182c61 !important;
+        color: #25ccf7 !important;
+        border-radius: 100%;
+      }
+      .datepicker-plot-area .datepicker-day-view .table-days td span,
+      .datepicker-plot-area .datepicker-year-view .year-item,
+      .datepicker-plot-area .datepicker-month-view .month-item {
+        color: #182c61;
       }
       .datepicker-plot-area .datepicker-day-view .table-days td span.today {
         background-color: inherit !important;
-        color: rgb(249, 216, 216) !important;
-        background-color: rgb(215, 59, 59) !important;
-        font-size: large !important;
+        color: #182c61 !important;
+        background-color: #25ccf7 !important;
         border-radius: 100%;
+      }
+      .datepicker-plot-area
+        .datepicker-day-view
+        .table-days
+        td
+        span.other-month {
+        color: #5f667a86 !important;
       }
     </style>
   </head>
@@ -56,9 +87,12 @@
     <script src="assets/documents/persian-datepicker.js"></script>
     <script>
       $(".test").persianDatepicker({
+        persianDigit: false,
+        toolbox: { text: { btnToday: "today" } },
         checkYear: function (year) {
-          return year >= 1328 && year < 1404;
+          return year >= 1398 && year < 1404;
         },
+        format: "YYYY/MM/DD",
       });
     </script>
   </body>

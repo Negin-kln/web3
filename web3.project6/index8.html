@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/documents/persian-datepicker.css" />
+    <style>
+      * {
+        font-family: Vazirmatn, sans-serif;
+      }
+      .test {
+        border: none;
+        border-bottom: 2px dashed #6d214f;
+        outline: none;
+        width: 210px;
+        padding: 5px 10px;
+        color: #6d214f;
+        font-size: 16px;
+        text-align: center;
+      }
+      .datepicker-plot-area * {
+        color: #6d214f !important;
+      }
+      .datepicker-plot-area {
+        background-color: #6d214f;
+      }
+      .datepicker-plot-area .datepicker-time-view {
+        background-color: #f2bedd;
+      }
+      .datepicker-plot-area .datepicker-time-view input {
+        background-color: #f2bedd;
+      }
+      .datepicker-plot-area .datepicker-time-view .down-btn,
+      .datepicker-plot-area .datepicker-time-view .up-btn {
+        background-color: #f2bedd !important;
+      }
+      .datepicker-plot-area .datepicker-time-view .down-btn:hover,
+      .datepicker-plot-area .datepicker-time-view .up-btn:hover {
+        background-color: #ffffff !important;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <label for="zaman">زمان دقیق را وارد کنید :</label>
+    <input type="text" id="zaman" class="test" /><br />
+
+    <script src="assets/documents/jquery.js"></script>
+    <script src="assets/documents/persian-date.js"></script>
+    <script src="assets/documents/persian-datepicker.js"></script>
+    <script>
+      $(".test").persianDatepicker({
+        onlyTimePicker: true,
+      });
+    </script>
+  </body>
+</html>
