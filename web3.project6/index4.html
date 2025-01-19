@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/documents/persian-datepicker.css" />
+    <style>
+      * {
+        font-family: Vazirmatn, sans-serif;
+      }
+      .test {
+        border: 2px solid rgb(83, 21, 21);
+        border-radius: 10px;
+        width: 250px;
+        background-color: rgb(249, 216, 216);
+        padding: 5px 10px;
+        color: rgb(83, 21, 21);
+        font-size: 16px;
+        text-align: center;
+      }
+      .datepicker-plot-area .selected {
+        background-color: rgb(83, 21, 21) !important;
+        color: white !important;
+      }
+      .datepicker-plot-area
+        .datepicker-day-view
+        .table-days
+        td
+        span.selected:hover,
+      .datepicker-plot-area .datepicker-day-view .table-days td span:hover,
+      .datepicker-plot-area .datepicker-year-view .year-item:hover,
+      .datepicker-plot-area .datepicker-month-view .month-item:hover {
+        background-color: rgb(249, 216, 216) !important;
+        color: rgb(83, 21, 21) !important;
+      }
+      .datepicker-plot-area .datepicker-day-view .table-days td span.today {
+        background-color: inherit !important;
+        color: rgb(249, 216, 216) !important;
+        background-color: rgb(215, 59, 59) !important;
+        font-size: large !important;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="test" /><br />
+
+    <script src="assets/documents/jquery.js"></script>
+    <script src="assets/documents/persian-date.js"></script>
+    <script src="assets/documents/persian-datepicker.js"></script>
+    <script>
+      $(".test").persianDatepicker({
+        checkYear: function (year) {
+          return year >= 1328 && year < 1404;
+        },
+      });
+    </script>
+  </body>
+</html>

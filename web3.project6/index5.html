@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/documents/persian-datepicker.css" />
+    <style>
+      * {
+        font-family: Vazirmatn, sans-serif;
+      }
+      .test {
+        border: 2px solid rgb(206, 177, 232);
+        border-radius: 20px;
+        width: 300px;
+        background-color: rgb(206, 177, 232);
+        padding: 5px 10px;
+        color: rgb(49, 8, 85);
+        font-size: 16px;
+        text-align: center;
+      }
+      .datepicker-plot-area .selected {
+        background-color: rgb(49, 8, 85) !important;
+        color: white !important;
+      }
+      .datepicker-plot-area
+        .datepicker-day-view
+        .table-days
+        td
+        span.selected:hover,
+      .datepicker-plot-area .datepicker-day-view .table-days td span:hover,
+      .datepicker-plot-area .datepicker-year-view .year-item:hover,
+      .datepicker-plot-area .datepicker-month-view .month-item:hover {
+        background-color: rgb(206, 177, 232) !important;
+        color: rgb(49, 8, 85) !important;
+      }
+      .datepicker-plot-area .datepicker-day-view .table-days td span.today {
+        background-color: inherit !important;
+        color: rgb(249, 216, 216) !important;
+        background-color: rgb(215, 59, 59) !important;
+        font-size: large !important;
+        border-radius: 100%;
+      }
+      .datepicker-plot-area .datepicker-day-view .table-days td.disabled span,
+      .datepicker-plot-area .datepicker-year-view .year-item-disable,
+      .datepicker-plot-area .datepicker-month-view .month-item-disable {
+        background-color: rgb(190, 189, 191) !important;
+        color: rgb(75, 56, 78) !important;
+      }
+      .datepicker-plot-area .datepicker-time-view .down-btn,
+      .datepicker-plot-area .datepicker-time-view .up-btn {
+        background-color: rgb(206, 177, 232) !important;
+      }
+      .datepicker-plot-area .datepicker-time-view .down-btn:hover,
+      .datepicker-plot-area .datepicker-time-view .up-btn:hover {
+        background-color: rgb(206, 177, 232) !important;
+      }
+      .datepicker-plot-area .datepicker-time-view input {
+        background-color: rgb(206, 177, 232) !important;
+      }
+      .datepicker-plot-area .datepicker-time-view .divider {
+        background-color: rgb(206, 177, 232) !important;
+      }
+      .datepicker-time-view {
+        background-color: rgb(206, 177, 232) !important;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <label for="date">تاریخ:</label>
+    <input type="text" id="date" class="test" style="margin-top: 20px" />
+
+    <script src="assets/documents/jquery.js"></script>
+    <script src="assets/documents/persian-date.js"></script>
+    <script src="assets/documents/persian-datepicker.js"></script>
+    <script>
+      $(".test").persianDatepicker({
+        persianDigit: false,
+        observer: true,
+        altField: ".observer-example-alt",
+        viewMode: "year",
+        altField: "#inlineExampleAlt",
+        altFormat: "LLLL",
+        maxDate: new persianDate().add("month", 3).valueOf(),
+        minDate: new persianDate().subtract("month", 3).valueOf(),
+        timePicker: {
+          enabled: true,
+          meridiem: {
+            enabled: true,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
