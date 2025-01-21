@@ -3,10 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>کرنومتر</title>
     <link rel="stylesheet" href="../src/output.css" />
   </head>
   <body>
-    
+    <div class="container">
+      <div class="grid grid-flow-row">
+        <div
+          id="time"
+          class="row-span-1 border-4 text-center text-[40px] border-rose-800 w-[350px] h-[150px] rounded-full mx-auto mt-[100px] py-[39px] bg-rose-100 text-rose-900"
+        >
+          <span id="hours">00</span>:<span id="minutes">00</span>:<span
+            id="seconds"
+            >00</span
+          >.<span id="milliseconds" class="text-[20px]">000</span>
+        </div>
+        <div
+          class="row-span-1 bg-rose-900 h-[20px] mt-5 rounded-md transition-all duration-100"
+          id="progress"
+          style="width: 0%"
+        ></div>
+        <div class="row-span-1">
+          <div class="flex justify-center mt-5">
+            <button
+              onclick="startTimer()"
+              class="col-span-1 border-2 border-green-800 bg-green-300 text-green-900 text-center w-[100px] rounded-full mx-2"
+            >
+              Start
+            </button>
+            <button
+              onclick="stopTimer()"
+              class="col-span-1 border-2 border-red-800 bg-red-300 text-red-900 text-center w-[100px] rounded-full mx-2"
+            >
+              Stop
+            </button>
+            <button
+              onclick="resetTimer()"
+              class="col-span-1 border-2 border-yellow-800 bg-yellow-300 text-center w-[100px] rounded-full text-yellow-900 mx-2"
+            >
+              Reset
+            </button>
+            <button
+              onclick="setTimer()"
+              class="col-span-1 border-2 border-gray-800 bg-gray-300 text-center w-[100px] rounded-full mx-2"
+            >
+              Set
+            </button>
+          </div>
+        </div>
+        <!-- نمایش زمان‌های ثبت‌شده -->
+        <div
+          id="recordedTimes"
+          class="row-span-1 text-center mt-5 text-rose-900"
+        ></div>
+      </div>
+    </div>
+    <script>
+      let intervalId = null;
+      let startTime = 0;
+      let elapsedTime = 0;
+      let recordedTimes = []; // آرایه‌ای برای ثبت تایم‌های ثبت‌شده
+      const maxTime = 60000; // حداکثر زمان برای نوار پیشرفت (۱ دقیقه)
+
+      function startTimer() {
+        if (intervalId !== null) return; // اگر تایمر در حال اجرا است، کاری نکن
+        startTime = Date.now() - elapsedTime;
+        intervalId = setInterval(updateTimer, 10);
+      }
+
+      function stopTimer() {
+        if (intervalId === null) return; // اگر تایمر متوقف است، کاری نکن
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+
+      function resetTimer() {
+        stopTimer();
+        elapsedTime = 0;
+        recordedTimes = []; // پاک کردن زمان‌های ثبت‌شده
+        updateDisplay();
+        displayRecordedTimes(); // به‌روزرسانی نمایش زمان‌های ثبت‌شده
+      }
+
+      function setTimer() {
+        if (intervalId === null) return; // اگر تایمر متوقف است، کاری نکن
+        const currentTime = getFormattedTime(elapsedTime);
+        recordedTimes.push(currentTime); // افزودن زمان فعلی به لیست
+        displayRecordedTimes(); // به‌روزرسانی نمایش زمان‌های ثبت‌شده
+      }
+
+      function updateTimer() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+        updateDisplay();
+      }
+
+      function updateDisplay() {
+        const { hours, minutes, seconds, milliseconds } =
+          getTimeParts(elapsedTime);
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds
+        ).padStart(2, "0");
+        document.getElementById("milliseconds").textContent = String(
+          milliseconds
+        ).padStart(3, "0");
+
+        // به‌روزرسانی نوار پیشرفت
+        const progress = (elapsedTime / maxTime) * 100;
+        document.getElementById("progress").style.width = `${Math.min(
+          progress,
+          100
+        )}%`;
+      }
+
+      function getTimeParts(time) {
+        const hours = Math.floor(time / 3600000);
+        const minutes = Math.floor((time % 3600000) / 60000);
+        const seconds = Math.floor((time % 60000) / 1000);
+        const milliseconds = time % 1000;
+        return { hours, minutes, seconds, milliseconds };
+      }
+
+      function getFormattedTime(time) {
+        const { hours, minutes, seconds, milliseconds } = getTimeParts(time);
+        return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
+          2,
+          "0"
+        )}:${String(seconds).padStart(2, "0")}.${String(milliseconds).padStart(
+          3,
+          "0"
+        )}`;
+      }
+
+      function displayRecordedTimes() {
+        const recordedTimesElement = document.getElementById("recordedTimes");
+        recordedTimesElement.innerHTML =
+          "<h3 class='text-xl font-bold'>زمان‌های ثبت‌شده:</h3>";
+        recordedTimes.forEach((time, index) => {
+          recordedTimesElement.innerHTML += `<p>${index + 1}. ${time}</p>`;
+        });
+      }
+    </script>
   </body>
 </html>
