@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+      }
+      body {
+        direction: rtl;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 60px;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      }
+      .nav li {
+        list-style-type: none;
+        color: #64676d;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #64676d;
+      }
+      .nav a:hover {
+        color: #ed2435;
+      }
+      .nav-bar {
+        display: flex;
+      }
+      .btn {
+        display: inline-block;
+        padding: 5px 10px;
+        border-width: 1px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .btn1 {
+        color: #ed2435;
+        background-color: #ffffff;
+        border-color: #d7d7d7;
+      }
+      .btn1:hover {
+        color: #ffffff;
+        background-color: #ed2435;
+        border-color: #ed2435;
+      }
+      .btn2 {
+        color: #ffffff;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <head>
+      <nav class="nav">
+        <div>
+          <a href="#"
+            ><img src="https://caffegis.com/front/img/logo.png" alt=""
+          /></a>
+        </div>
+        <ul class="nav-bar">
+          <li><a href="#">خانه</a></li>
+          <li><a href="#">دوره ها</a></li>
+          <li><a href="#">بلاگ</a></li>
+          <li
+            onmouseover="mouseOver(this)"
+            onmouseout="mouseOut(this)"
+          >
+            <a
+              href="#"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+              >آموزش های رایگان
+              <i
+                class="fa fa-angle-down"
+                aria-hidden="true"
+                style="padding-right: 2px"
+              ></i
+            ></a>
+          </li>
+          <li><a href="#">سوالات متداول</a></li>
+          <li><a href="#">تماس با ما</a></li>
+          <li><a href="#">درباره ما</a></li>
+        </ul>
+        <div>
+          <button class="btn btn1">ورود</button>
+          <button class="btn btn2">ثبت نام</button>
+        </div>
+      </nav>
+    </head>
+    <script src="assets/custom1.js"></script>
+  </body>
+</html>
