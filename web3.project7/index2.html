@@ -4,22 +4,214 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container1 {
+        display: flex;
+        width: 100%;
+        height: 150px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+      }
+
+      .level {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+      .level button {
+        padding: 5px 0;
+        margin: 5px 0;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+      }
+      .level button:first-child {
+        color: green;
+        background-color: lightgreen;
+      }
+      .level button:nth-child(2) {
+        color: gold;
+        background-color: lemonchiffon;
+      }
+      .level button:last-child {
+        color: red;
+        background-color: lightcoral;
+      }
+      .chooseLevel {
+        width: 40%;
+        font-size: 30px;
+        color: black;
+        border-bottom: 4px double darkblue;
+      }
+      .timer {
+        width: 30%;
+        color: red;
+        font-size: 24px;
+      }
+      .container2 {
+        margin-top: 5px;
+        padding: 5px;
+        border: 3px solid black;
+        width: 100%;
+        height: 600px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .box {
+        width: 20px;
+        height: 20px;
+        background-color: green;
+        border-radius: 50%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .box2 {
+        width: 20px;
+        height: 20px;
+        background-color: darkblue;
+        color: white;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+      }
+    </style>
   </head>
   <body>
-    <body>
-      <div id="parent">
-        <p id="child1">This is test.</p>
-        <p id="child2">This is test.</p>
+    <div class="container1">
+      <div class="timer">00:00</div>
+      <div class="chooseLevel">Select the game level</div>
+      <div class="level">
+        <button onclick="level1()">level 1</button>
+        <button onclick="level2()">level 2</button>
+        <button onclick="level3()">level 3</button>
       </div>
-
-      <script>
-        const parent = document.getElementById("parent");
-        const child = document.getElementById("child1");
-        const para = document.createElement("p");
-        const node = document.createTextNode("This is new test.");
-        para.appendChild(node);
-        parent.replaceChild(para, child);
-      </script>
-    </body>
+    </div>
+    <div class="container2">
+      <div class="box"></div>
+      <div class="box2">you</div>
+    </div>
+    <script>
+      let left1 = 0;
+      let top1 = 0;
+      let leftSign = 1;
+      let topSign = 1;
+      let box = document.querySelector(".box");
+      let title = document.querySelector(".chooseLevel");
+      function level1() {
+        title.innerHTML = "level 1";
+        title.style.color = "green";
+        setInterval(function () {
+          left1 += Math.random() * 10 * leftSign;
+          top1 += Math.random() * 10 * topSign;
+          if (left1 < 0) {
+            left1 = 0;
+            leftSign = 1;
+          }
+          if (left1 > 800) {
+            left1 = 800;
+            leftSign = -1;
+          }
+          if (top1 < 0) {
+            top1 = 0;
+            topSign = 1;
+          }
+          if (top1 > 500) {
+            top1 = 500;
+            topSign = -1;
+          }
+          box.style.left = `${left1}px`;
+          box.style.top = `${top1}px`;
+        }, 1000);
+      }
+      function level2() {
+        title.innerHTML = "level 2";
+        title.style.color = "gold";
+        box.style.backgroundColor = "yellow";
+        setInterval(function () {
+          left1 += Math.random() * 10 * leftSign;
+          top1 += Math.random() * 10 * topSign;
+          if (left1 < 0) {
+            left1 = 0;
+            leftSign = 1;
+          }
+          if (left1 > 800) {
+            left1 = 800;
+            leftSign = -1;
+          }
+          if (top1 < 0) {
+            top1 = 0;
+            topSign = 1;
+          }
+          if (top1 > 500) {
+            top1 = 500;
+            topSign = -1;
+          }
+          box.style.left = `${left1}px`;
+          box.style.top = `${top1}px`;
+        }, 100);
+      }
+      function level3() {
+        title.innerHTML = "level 3";
+        title.style.color = "red";
+        box.style.backgroundColor = "red";
+        setInterval(function () {
+          left1 += Math.random() * 10 * leftSign;
+          top1 += Math.random() * 10 * topSign;
+          if (left1 < 0) {
+            left1 = 0;
+            leftSign = 1;
+          }
+          if (left1 > 800) {
+            left1 = 800;
+            leftSign = -1;
+          }
+          if (top1 < 0) {
+            top1 = 0;
+            topSign = 1;
+          }
+          if (top1 > 500) {
+            top1 = 500;
+            topSign = -1;
+          }
+          box.style.left = `${left1}px`;
+          box.style.top = `${top1}px`;
+        }, 10);
+      }
+      function timer() {
+        window.onkeydown = function (even) {
+          let box2 = document.querySelector(".box2");
+          
+        };
+      }
+      //   window.onkeydown = function (even) {
+      //     let box = document.querySelector(".box");
+      //     console.log(even);
+      //     if (even.key == "ArrowRight") {
+      //       left1 += 5;
+      //       box.style.left = `${left1}px`;
+      //     } else if (even.key == "ArrowLeft") {
+      //       left1 -= 5;
+      //       box.style.left = `${left1}px`;
+      //     } else if (even.key == "ArrowDown") {
+      //       top1 += 5;
+      //       box.style.top = `${top1}px`;
+      //     } else if (even.key == "ArrowUp") {
+      //       top1 -= 5;
+      //       box.style.top = `${top1}px`;
+      //     }
+      //     console.log(even.key);
+      //   };
+    </script>
   </body>
 </html>
