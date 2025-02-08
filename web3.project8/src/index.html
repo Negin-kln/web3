@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" id="ht" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        font-family: Vazirmatn, sans-serif;
+      }
+    </style>
+  </head>
+  <body dir="rtl" class="dark:bg-black">
+    <div class="m-2">
+      <button
+        class="border-2 border-pink-500 text-pink-500 rounded-md p-1 bg-pink-950 text-[14px]"
+        onclick="darkMode()"
+      >
+        dark mode
+      </button>
+      <button
+        class="border-2 border-cyan-200 text-cyan-200 rounded-md p-1 bg-cyan-950 text-[14px]"
+        onclick="lightMode()"
+      >
+        light mode
+      </button>
+    </div>
+    <form
+      action=""
+      class="container border-2 border-cyan-600 bg-cyan-900 max-w-[400px] mx-auto my-[100px] rounded-xl font-bold dark:border-pink-400 dark:bg-pink-950"
+    >
+      <div class="grid grid-flow-row grid-row-4">
+        <h2
+          class="row-span-1 text-center text-cyan-600 dark:text-pink-400 border-b-2"
+        >
+          فرم ثبت نام
+        </h2>
+        <div
+          class="row-span-3 font-light text-[14px] text-cyan-300 dark:text-pink-500 px-4 py-2"
+        >
+          <div class="grid grid-cols-2">
+            <div class="col-span-1">
+              <div class="grid grid-rows-4 gap-y-2">
+                <div class="row-span-1">
+                  <label for="name">نام:</label><br /><input
+                    type="text"
+                    id="name"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  />
+                </div>
+                <div class="row-span-1">
+                  <label for="number">شماره پرونده:</label><br /><input
+                    type="text"
+                    id="number"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  />
+                </div>
+                <div class="row-span-1">
+                  <label for="email">ایمیل:</label> <br /><input
+                    type="text"
+                    id="number"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  />
+                </div>
+                <div class="row-span-1">
+                  <label for="city">محل تولد:</label>
+                  <select
+                    name="city"
+                    id="city"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  >
+                    <option value="" disabled selected>انتخاب</option>
+                    <option value="اصفهان">اصفهان</option>
+                    <option value="البرز">البرز</option>
+                    <option value="تهران">تهران</option>
+                    <option value="تبریز">تبریز</option>
+                    <option value="شیراز">شیراز</option>
+                    <option value="مرکزی">مرکزی</option>
+                  </select>
+                </div>
+                <div class="row-span-1 flex-col px-1">
+                  <div class="flex items-center">
+                    <input type="checkbox" name="qhavanin" id="check" /><label
+                      for="check"
+                      class="px-2 text-[12px]"
+                      >قوانین را می پذیرم.</label
+                    >
+                  </div>
+                  <div
+                    class="checker text-red-400 text-[10px] dark:text-yellow-400"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <div class="grid grid-rows-4 gap-y-2">
+                <div class="row-span-1">
+                  <label for="lastname"> نام خانوادگی:</label><br />
+                  <input
+                    type="text"
+                    id="lastname"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  />
+                </div>
+                <div class="row-span-1">
+                  <label for="telephone">شماره تلفن:</label><br />
+                  <input
+                    type="telephone"
+                    id="lastname"
+                    class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
+                  />
+                </div>
+                <div class="row-span-2">
+                  <label for="">جنسیت:</label>
+                  <div class="flex pt-1">
+                    <input type="radio" name="radio" id="female" /><labele
+                      class="px-1"
+                      for="female"
+                      >زن</labele
+                    >
+                  </div>
+                  <div class="flex pt-1">
+                    <input type="radio" name="radio" id="male" /><labele
+                      class="px-1"
+                      for="male"
+                      >مرد</labele
+                    >
+                  </div>
+                  <div
+                    id="empty"
+                    class="text-red-400 text-[10px] dark:text-yellow-400"
+                  ></div>
+                </div>
+                <div class="row-san-1">
+                  <input
+                    type="submit"
+                    value="ثبت"
+                    onclick="submit1()"
+                    class="border-1 px-[10px] py-[5px] rounded-xl bg-cyan-500 dark:bg-pink-700 text-cyan-950 dark:text-pink-200 w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="../assets/js/custom1.js"></script>
+  </body>
+</html>
