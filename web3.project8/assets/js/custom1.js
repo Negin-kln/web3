@@ -50,6 +50,11 @@ function navbarFn(elm, e) {
 }
 function faqFn(elm, e) {
   e.preventDefault();
+  let faqLinks = document.querySelectorAll(".faqbox a");
+  for (let item of faqLinks) {
+    item.classList.remove("active");
+  }
+  elm.classList.add("active");
   let faqTexts = document.querySelectorAll(".faq-contant");
   for (let item of faqTexts) {
     item.classList.remove("show");
@@ -58,5 +63,4 @@ function faqFn(elm, e) {
   let faqLines = elm.getAttribute("data-target");
   console.log(elm.getAttribute("data-target"));
   document.getElementById(faqLines).classList.add("show");
-  console.log(elm.getAttribute("data-target"));
 }
