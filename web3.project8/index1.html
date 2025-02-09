@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+      nav {
+        display: flex;
+        padding-top: 10px;
+        justify-content: center;
+      }
+      nav a {
+        text-decoration: none;
+        font-size: 10px;
+        color: #4d5868;
+        border: 1px solid #edf0f5;
+        background-color: #edf0f5;
+        border-radius: 5px;
+        padding: 2px 5px;
+        margin: 0 2px;
+        cursor: pointer;
+      }
+      nav a:hover {
+        color: #da0b4e;
+      }
+      nav a.active {
+        background-color: #da0b4e;
+        color: #ffffff;
+      }
+      .tab-contant {
+        display: none;
+        margin: 20px;
+      }
+      .tab-contant.show {
+        display: block;
+      }
+      .faqbox {
+        margin: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .faqbox a {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #edf0f5;
+        color: #000000;
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .faqbox div {
+        color: #4d5868;
+        padding: 20px 10px;
+        display: none;
+      }
+      .faqbox div.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a data-target="tab1" onclick="navbarFn(this,event)" class="active"
+        >روش عضویت در سایت</a
+      >
+      <a data-target="tab2" onclick="navbarFn(this,event)"
+        >نحوه برگزاری دوره ها و تفاوت بین آن ها</a
+      >
+      <a data-target="tab3" onclick="navbarFn(this,event)"
+        >نحوه شرکت و طی کردن مسیر یادگیری</a
+      >
+      <a data-target="tab4" onclick="navbarFn(this,event)"
+        >راهنمای ورود به کلاس ها
+      </a>
+    </nav>
+    <div id="tab1" class="tab-contant show">
+      <div class="faqbox">
+        <a data-target="faq1" class="active" onclick="faqFn(this,event)">
+          نحوه عضویت در سایت چگونه است؟
+        </a>
+        <div id="faq1" class="faq-contant">
+          برای عضویت در سایت کافیست شماره موبایل خود را وارد کرده، سپس از طریق
+          پیامک کدی برای شما ارسال میشود و پس از وارد نمودن کد ارسالی و نام و
+          نام خانوادگی و رمز عبور و تکرار رمز در سایت ثبت نام نمایید.
+        </div>
+      </div>
+      <div class="faqbox">
+        <a data-target="faq2" onclick="faqFn(this,event)">
+          برای مشاهده کدام قسمت ها باید عضو سایت شوم؟
+        </a>
+        <div id="faq2" class="faq-contant">
+          برای مشاهده، خرید و دانلود دوره ها باید عضو سایت شویم.
+        </div>
+      </div>
+    </div>
+    <div id="tab2" class="tab-contant">
+      
+    </div>
+    <div id="tab3" class="tab-contant">tab3</div>
+    <div id="tab4" class="tab-contant">tab4</div>
+    <script src="assets/js/custom1.js"></script>
+    <script></script>
+  </body>
+</html>

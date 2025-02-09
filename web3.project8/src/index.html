@@ -76,17 +76,17 @@
                     class="px-2 w-[150px] mr-1 rounded-md bg-cyan-500 dark:bg-pink-700 dark:text-pink-100 outline outline-none text-red-900"
                   >
                     <option value="" disabled selected>انتخاب</option>
-                    <option value="اصفهان">اصفهان</option>
-                    <option value="البرز">البرز</option>
-                    <option value="تهران">تهران</option>
-                    <option value="تبریز">تبریز</option>
-                    <option value="شیراز">شیراز</option>
-                    <option value="مرکزی">مرکزی</option>
+                    <option value="e">اصفهان</option>
+                    <option value="al">البرز</option>
+                    <option value="te">تهران</option>
+                    <option value="ta">تبریز</option>
+                    <option value="sh">شیراز</option>
+                    <option value="m">مرکزی</option>
                   </select>
                 </div>
                 <div class="row-span-1 flex-col px-1">
                   <div class="flex items-center">
-                    <input type="checkbox" name="qhavanin" id="check" /><label
+                    <input type="checkbox" name="rule" id="check" /><label
                       for="check"
                       class="px-2 text-[12px]"
                       >قوانین را می پذیرم.</label
@@ -139,9 +139,10 @@
                 </div>
                 <div class="row-san-1">
                   <input
+                    id="btn"
                     type="submit"
                     value="ثبت"
-                    onclick="submit1()"
+                    onclick="clickHandler()"
                     class="border-1 px-[10px] py-[5px] rounded-xl bg-cyan-500 dark:bg-pink-700 text-cyan-950 dark:text-pink-200 w-full"
                   />
                 </div>
