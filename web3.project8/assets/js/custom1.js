@@ -61,7 +61,6 @@ function timer() {
     window.location.assign("http://127.0.0.1:5500/index1.html");
   });
 }
-
 //---------------------------tab & faq functions
 function navbarFn(elm, e) {
   e.preventDefault();
@@ -77,13 +76,9 @@ function navbarFn(elm, e) {
   let tabId = elm.getAttribute("data-target");
   document.getElementById(tabId).classList.add("show");
 }
+let faqId = "";
 function faqFn(elm, e) {
   e.preventDefault();
-  let faqLinks = document.querySelectorAll(".faqbox a");
-  for (let item of faqLinks) {
-    item.classList.remove("active");
-  }
-  elm.classList.add("active");
   let faqTexts = document.querySelectorAll(".faq-contant");
   for (let item of faqTexts) {
     item.classList.remove("show");
@@ -91,5 +86,11 @@ function faqFn(elm, e) {
   }
   let faqLines = elm.getAttribute("data-target");
   console.log(elm.getAttribute("data-target"));
-  document.getElementById(faqLines).classList.add("show");
+  if (faqId != faqLines) {
+    document.getElementById(faqLines).classList.add("show");
+    faqId = faqLines;
+  } else {
+    document.getElementById(faqLines).classList.remove("show");
+    faqId = "";
+  }
 }
