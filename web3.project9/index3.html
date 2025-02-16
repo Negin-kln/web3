@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "خراسان شمالی",
+            "خراسان جنوبی",
+            "البرز",
+            "آذربایجان",
+            "ایلام",
+          ],
+          datasets: [
+            {
+              label: "نمودار افزایش جمعیت",
+              data: [5951000, 8700000, 2300000, 3720000, 5100540],
+              borderWidth: 1,
+              borderColor: "##575fcf",
+              backgroundColor: "#3c40c6",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
