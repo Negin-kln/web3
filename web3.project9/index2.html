@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let std = [
+        {
+          id: 1,
+          name: "negin",
+          ln: "kalantari",
+          age: 25,
+        },
+        {
+          id: 2,
+          name: "a",
+          ln: "b",
+          age: 12,
+        },
+        {
+          id: 3,
+          name: "c",
+          ln: "d",
+          age: 21,
+        },
+        {
+          id: 4,
+          name: "e",
+          ln: "f",
+          age: 30,
+        },
+      ];
+      console.log(JSON.stringify(std));
+      let text = `[{"id":1,"name":"negin","ln":"kalantari","age":25},{"id":2,"name":"a","ln":"b","age":12},{"id":3,"name":"c","ln":"d","age":21},{"id":4,"name":"e","ln":"f","age":30}]`;
+      console.log(JSON.parse(text));
+    </script>
+  </body>
+</html>
