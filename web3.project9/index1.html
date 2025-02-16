@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+      .faqbox {
+        margin: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .faqbox i {
+        color: #ecf0f1;
+        font-size: large;
+        position: absolute;
+        left: 30px;
+      }
+      .faqbox .faqQ {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .faqbox .faqQ:hover {
+        color: #bdc3c7;
+      }
+      .faqbox .faqA {
+        color: #2c3e50;
+        padding: 20px 10px;
+        position: relative;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="faqbox">
+      <a class="faqQ">
+        نحوه برگزاری دوره ها چگونه است؟
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </a>
+      <div class="faqA">
+        دوره ها به سه طریق در کافه جی آی اس برگزار می شود. دوره های غیر حضوری:
+        دوره های غیر حضوری دوره هایی است که مطالب آموزشی به صورت بسته های آموزشی
+        ارائه شده و در قالب فیلم های آموزشی یه صورت دانلودی در اختیار شما
+        دانشجویان عزیز قرار می گیرد، دوره های غیرحضوری شامل پشتیبانی مدرسین
+        CaffeGIS می باشند. دوره های آنلاین: دوره های آنلاین شبیه به دوره های
+        حضوری بوده با این تفاوت که به صورت آنلاین در محیط Adobe Connect برگزار
+        می گردد. جلسات کلاس ضبط گردیده و در پایان دوره در پروفایل دانشچو در
+        دسترس قرار می گیرد. دوره های آنلاین نیز مشابه دوره های دیگر شامل
+        پشتیبانی مدرسین CaffeGIS می باشد. دوره های حضوری: در دوره های حضوری
+        دانشجویان در کلاس حضور فیزیکی داشته و آموزش ها به صورت چهره به چهره می
+        باشد. این دوره ها به صورت کلاس های حضوری چند نفره در آموزشگاه ها و
+        موسسات آموزش عالی و نیز سمینارهای آموزشی برای دانشگاه ها، شرکت ها و
+        سازمان های مختلف دولتی و حصوصی برگزار می گردد. این دوره ها همراه با
+        پشتیبانی آنلاین مدرسین بوده و در انتهای هر دوره فیلم آموزشی در اختیار
+        دانشجوی گرامی قرار می گیرد.
+      </div>
+    </div>
+    <div class="faqbox">
+      <a class="faqQ">
+        سر فصل های دوره های حضوری، آنلاین و غیر حضوری چه تفاوتی دارد؟
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </a>
+      <div class="faqA">
+        سر فصل ها هیچ تفاوتی ندارند و همه دوره ها مبتنی بر مسیر یادگیری است.
+        صرفا نحوه برگزاری دوره متفاوت است.
+      </div>
+    </div>
+    <div class="faqbox">
+      <a class="faqQ">
+        نحوه ثبت نام در دوره های حضوری چگونه است؟
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </a>
+      <div class="faqA">
+        برنامه دوره های حضوری و آنلاین در تقویم آموزشی آورده شده است. کافیست روی
+        دوره مورد نظر کلیک کرده و دکمه رزرو را کلیک کنید. می توانی زمان دوره را
+        مشاهده کرده و با پرداخت یک چهارم مبلغ، در دوره پیش ثبت نام کنید.
+      </div>
+    </div>
+    <div class="faqbox">
+      <a class="faqQ">
+        نحوه شرکت در دوره های آنلاین چگونه است؟
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </a>
+      <div class="faqA">مشابه دوره های حضوری باید پیش ثبت نام انجام دهید.</div>
+    </div>
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $(".faqQ").click(function () {
+          $(this).next().slideToggle();
+          $(".faqQ").not(this).next().slideUp();
+          $(this).children("i").toggleClass("fa-angle-down fa-angle-up");
+          $(".faqQ")
+            .not(this)
+            .children("i")
+            .addClass("fa-angle-up")
+            .removeClass("fa-angle-down");
+        });
+      });
+    </script>
+  </body>
+</html>
