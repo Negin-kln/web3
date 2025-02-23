@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+  </head>
+  <body>
+    <main class="blogs">
+      <h1>مقالات</h1>
+      <table id="table">
+        <tr>
+          <th>کد مقاله</th>
+          <th>عنوان مقالات</th>
+          <th colspan="3">ابزار</th>
+        </tr>
+      </table>
+    </main>
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $.get("http://127.0.0.1:3000/blogs", function (data, status) {
+          if (status == "success") {
+            for (let item of data) {
+              $("#table").append(
+                `<tr><td>${item.id}</td><td><a href="blog.html?id=${item.id}">${item.title}</a></td><td><a href="update.html?id=${item.id}"><i class="fa fa-pencil-square-o" aria-hidden="true" id="edit-btn"></i></a></td><td><a><i class="fa fa-trash" aria-hidden="true" id="del-btn"></i></a></td></tr>`
+              );
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

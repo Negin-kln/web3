@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+  </head>
+  <body>
+    <main class="update">
+      <h1>مقاله</h1>
+      <form class="update-detaile">
+        <label for="title">عنوان:</label>
+        <input type="text" id="title" /><br />
+        <div class="detailes">
+          <label for="trans">مترجم:</label>
+          <i><input type="text" id="trans" /></i><span>/</span
+          ><label for="date">تاریخ انتشار:</label
+          ><i><input type="text" id="date" /> </i><span>/</span
+          ><label for="views">بازدید:</label>
+          <i><input type="text" id="views" /></i>
+        </div>
+        <div>
+          <label for="text-image">متن زیر تصویر:</label>
+          <input type="text" id="text-image" />
+        </div>
+        <div>
+          <label for="text-title">عنوان متن:</label>
+          <input type="text" name="" id="text-title" />
+        </div>
+        <div class="textarea">
+          <label for="text">متن:</label><br />
+          <textarea name="" id="text"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">ثبت</button>
+      </form>
+    </main>
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      let id = getParameterByName("id");
+      $(function () {
+        $.get(`http://127.0.0.1:3000/blogs/${id}`, function (data, status) {
+          if (status == "success") {
+            $("#title").val(`${data.title}`);
+            $("#trans").val(`${data.translator}`);
+            $("#date").val(`${data.date}`);
+            $("#views").val(`${data.views}`);
+            $("#text-image").val(`${data.imageText}`);
+            $("#text-title").val(`${data.titleText}`);
+            $("#text").val(`${data.text}`);
+          }
+        });
+      });
+      $(".submit-btn").click(function () {
+        var settings = {
+          url: `http://127.0.0.1:3000/blogs/${id}`,
+          method: "PUT",
+          timeout: 0,
+          headers: {
+            "Content-Type": "aplication/json",
+          },
+          date: JSON.stringify({
+            title: $("#title").val(),
+            translator: $("#trans").val(),
+            date: $("#date").val(),
+            views: $("#views").val(),
+            imageText: $("#text-image").val(),
+            titleText: $("#text-title").val(),
+            text: $("#text").val(),
+          }),
+        };
+
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+        });
+      });
+    </script>
+  </body>
+</html>

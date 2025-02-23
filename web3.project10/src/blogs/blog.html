@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+  </head>
+  <body>
+    <main class="blog">
+      <h1>مقاله</h1>
+      <div class="blog-detaile"></div>
+    </main>
+    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      let id = getParameterByName("id");
+      console.log(id);
+      $(function () {
+        $.get(`http://127.0.0.1:3000/blogs/${id}`, function (data, status) {
+          if (status == "success") {
+            $(".blog-detaile").append(`<h2>${data.title}</h2>`);
+            $(".blog-detaile").append(
+              `<div><i>مترجم:${data.translator}</i><span>/ </span><i>تاریخ انتشار:${data.date}</i><span>/ </span><i>بازدید:${data.views}</i></div>`
+            );
+            $(".blog-detaile").append(`<img src="${data.image}">`);
+            $(".blog-detaile").append(`<h3>${data.imageText}</h3>`);
+            $(".blog-detaile").append(`<h4>${data.titleText}</h4>`);
+            $(".blog-detaile").append(`<p>${data.text}</p>`);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
