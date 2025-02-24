@@ -70,9 +70,10 @@
           method: "PUT",
           timeout: 0,
           headers: {
-            "Content-Type": "aplication/json",
+            "Content-Type": "application/json", // اصلاح شده
           },
-          date: JSON.stringify({
+          data: JSON.stringify({
+            // اصلاح شده
             title: $("#title").val(),
             translator: $("#trans").val(),
             date: $("#date").val(),
