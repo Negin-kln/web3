@@ -32,7 +32,7 @@
             id="show-image"
             src=""
             alt="پیش‌نمایش تصویر"
-            style="max-width: 100%; height: auto; padding-top: 5px"
+            style="max-width: 100%; height: auto"
           />
         </div>
         <div>
@@ -52,33 +52,11 @@
     </main>
     <script src="../../assets/js/jquery-3.7.1.min.js"></script>
     <script>
-      function getParameterByName(name, url = window.location.href) {
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return "";
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }
-      let id = getParameterByName("id");
       $(function () {
-        $.get(`http://127.0.0.1:3000/blogs/${id}`, function (data, status) {
-          if (status == "success") {
-            $("#title").val(`${data.title}`);
-            $("#trans").val(`${data.translator}`);
-            $("#date").val(`${data.date}`);
-            $("#views").val(`${data.views}`);
-            $("#text-image").val(`${data.imageText}`);
-            $("#text-title").val(`${data.titleText}`);
-            $("#text").val(`${data.text}`);
-            $("#image").val(`${data.image}`);
-            $("#show-image").attr("src", data.image);
-          }
-        });
         $(".submit-btn").click(function () {
           var settings = {
-            url: `http://127.0.0.1:3000/blogs/${id}`,
-            method: "PUT",
+            url: `http://127.0.0.1:3000/blogs`,
+            method: "POST",
             timeout: 0,
             headers: {
               "Content-Type": "application/json",
@@ -97,7 +75,12 @@
 
           $.ajax(settings).done(function (response) {
             console.log(response);
-            alert("تغییرات با موفقیت ذخیره شد!");
+            window.location.assign(
+              "http://127.0.0.1:5500/src/blogs/blogs.html",
+              function () {
+                alert("مقاله جدید ایجاد شد!");
+              }
+            );
           });
         });
       });

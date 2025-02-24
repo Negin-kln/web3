@@ -28,6 +28,7 @@
           <th colspan="3">ابزار</th>
         </tr>
       </table>
+      <button class="create-btn">ثبت مقاله جدید</button>
     </main>
     <script src="../../assets/js/jquery-3.7.1.min.js"></script>
     <script>
@@ -36,10 +37,27 @@
           if (status == "success") {
             for (let item of data) {
               $("#table").append(
-                `<tr><td>${item.id}</td><td><a href="blog.html?id=${item.id}">${item.title}</a></td><td><a href="update.html?id=${item.id}"><i class="fa fa-pencil-square-o" aria-hidden="true" id="edit-btn"></i></a></td><td><a><i class="fa fa-trash" aria-hidden="true" id="del-btn"></i></a></td></tr>`
+                `<tr><td>${item.id}</td><td><a href="blog.html?id=${item.id}">${item.title}</a></td><td><a href="update.html?id=${item.id}"><i class="fa fa-pencil-square-o" aria-hidden="true" id="edit-btn"></i></a></td><td><a class="delete-btn" data-id="${item.id}"><i class="fa fa-trash del-btn" aria-hidden="true"></i></a></td></tr>`
               );
             }
           }
+        });
+        $(".create-btn").click(function () {
+          window.location.assign("http://127.0.0.1:5500/src/blogs/create.html");
+        });
+        $("body").on("click", ".delete-btn", function () {
+          let id = $(this).attr("data-id");
+          var settings = {
+            url: `http://127.0.0.1:3000/blogs/${id}`,
+            method: "DELETE",
+            timeout: 0,
+          };
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            alert(`مقاله با کد  ${id} حذف شد.`);
+            location.reload();
+          });
         });
       });
     </script>

@@ -42,7 +42,7 @@ h1 {
 .blogs tr:nth-child(2n + 1) a:hover {
   color: purple;
 }
-.blogs #del-btn {
+.blogs .del-btn {
   color: rgb(238, 14, 14);
 }
 .blogs #edit-btn {
@@ -130,4 +130,13 @@ h1 {
   border-radius: 5px;
   background-color: greenyellow;
   cursor: pointer;
+}
+/* ................create */
+.create-btn {
+  border: 1px solid blue;
+  color: white;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: blue;
 }
