@@ -97,7 +97,12 @@
 
           $.ajax(settings).done(function (response) {
             console.log(response);
-            alert("تغییرات با موفقیت ذخیره شد!");
+            window.location.assign(
+              "http://127.0.0.1:5500/src/blogs/blogs.html",
+              function () {
+                alert("تغییرات با موفقیت ذخیره شد!");
+              }
+            );
           });
         });
       });

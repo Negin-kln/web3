@@ -157,7 +157,9 @@ h1 {
   background-color: #ffbeb8;
   font-size: 14px;
   margin: 0 auto;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   display: none;
 }
 .blogs__del h3 {
