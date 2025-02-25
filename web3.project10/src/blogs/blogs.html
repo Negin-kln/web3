@@ -21,14 +21,22 @@
   <body>
     <main class="blogs">
       <h1>مقالات</h1>
-      <table id="table">
+      <table class="blogs__table" id="table">
         <tr>
           <th>کد مقاله</th>
           <th>عنوان مقالات</th>
           <th colspan="3">ابزار</th>
         </tr>
       </table>
-      <button class="create-btn">ثبت مقاله جدید</button>
+      <button class="blogs__create-btn">ثبت مقاله جدید</button>
+      <div class="blogs__del">
+        <h3>حذف مقاله</h3>
+        <p class="del__detaile"></p>
+        <div class="del__btn">
+          <button class="btn__yes">بله</button>
+          <button class="btn__no">خیر</button>
+        </div>
+      </div>
     </main>
     <script src="../../assets/js/jquery-3.7.1.min.js"></script>
     <script>
@@ -42,21 +50,29 @@
             }
           }
         });
-        $(".create-btn").click(function () {
+        $(".blogs__create-btn").click(function () {
           window.location.assign("http://127.0.0.1:5500/src/blogs/create.html");
         });
         $("body").on("click", ".delete-btn", function () {
           let id = $(this).attr("data-id");
-          var settings = {
-            url: `http://127.0.0.1:3000/blogs/${id}`,
-            method: "DELETE",
-            timeout: 0,
-          };
-
-          $.ajax(settings).done(function (response) {
-            console.log(response);
-            alert(`مقاله با کد  ${id} حذف شد.`);
-            location.reload();
+          $(".blogs__del").show(function () {
+            let del = document.getElementsByClassName("del__detaile")[0];
+            del.innerHTML = `آیا میخواهید مقاله با کد ${id}شود؟`;
+            $(".btn__yes").click(function () {
+              var settings = {
+                url: `http://127.0.0.1:3000/blogs/${id}`,
+                method: "DELETE",
+                timeout: 0,
+              };
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                $(".blogs__del").hide();
+                alert(`مقاله ${id}حذف شد.`);
+              });
+            });
+            $(".btn__no").click(function () {
+              $(".blogs__del").hide();
+            });
           });
         });
       });
