@@ -22,5 +22,25 @@
       "imageText": "هر چقدر هم که سرعت فیلم کم باشد، روح (معنا) همیشه به اندازه‌ی کافی برای عکاسی که انتخابش کرده است صبر می‌کند.",
       "views": 263
     }
+  ],
+  "users":[
+    {
+      "id":"1",
+      "name":"negin",
+      "lastName":"kalantari",
+      "email":"neginkalantari@gmail.com",
+      "address":"arak-khiyaban khoram",
+      "role":"admin",
+      "phone":"09189631873"
+    },
+    {
+      "id":"2",
+      "name":"arezo",
+      "lastName":"baban",
+      "email":"baban@gmail.com",
+      "address":"tehran-meydan malek",
+      "role":"user",
+      "phone":"09129641953"
+    }
   ]
 }

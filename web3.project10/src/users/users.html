@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style1.css" />
+  </head>
+  <body>
+    <main class="users">
+      <h1>users</h1>
+      <table class="list">
+        <tr>
+          <th>Id</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th colspan="3">Tools</th>
+        </tr>
+      </table>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      axios
+        .get("http://127.0.0.1:3000/users")
+        .then((response) => {
+          let users = response.data;
+          let usersList = document.getElementsByClassName("list")[0];
+          users.forEach((user) => {
+            let userInfo = document.createElement("tr");
+            userInfo.innerHTML = `<td>${user.id}</td>
+          <td>${user.name} ${user.lastName}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td><a id="btn-view" href="user.html?id=${user.id}">view</a></td>
+          <td><a id="btn-edit">edit</a></td>
+          <td><a id="btn-delete">delete</a></td>`;
+            usersList.appendChild(userInfo);
+          });
+        })
+        .catch((error) => {
+          alert("اطلاعات به درستی دریافت نشد.لطفا دوباره تلاش کنید.", error);
+        });
+    </script>
+  </body>
+</html>

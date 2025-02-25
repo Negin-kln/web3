@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style1.css" />
+  </head>
+  <body>
+    <main class="user">
+      <div class="user-box"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      let id = getParameterByName("id");
+      if (id) {
+        let userItem = document.getElementsByClassName("user-box")[0];
+        userItem.innerHTML = "";
+        axios
+          .get(`http://127.0.0.1:3000/users/${id}`)
+          .then((response) => {
+            let users = response.data;
+            let userInfo = document.createElement("div");
+            userInfo.classList.add("box-detailes");
+            userInfo.innerHTML = `<div class="detailes-role">
+          Role:${users.role}
+        </div><div class="detailes-info">
+          <div>First Name: <span>${users.name}</span></div>
+          <div>Last Name: <span>${users.lastName}</span></div>
+        </div>
+        <div class="detailes-info">
+          <div>phone: <span>${users.phone}</span></div>
+        </div>
+        <div class="detailes-info">
+          <div>Email: <span>${users.email}</span></div>
+        </div>
+        <div class="detailes-info"><div>Address: <span>${users.address}</span></div></div>
+        `;
+            userItem.appendChild(userInfo);
+          })
+          .catch((error) => {
+            console.error("Error fetching user data:", error);
+            userItem.innerHTML = "<p>خطا در دریافت اطلاعات کاربر</p>";
+          });
+      } else {
+        console.error("ID not found in URL");
+      }
+    </script>
+  </body>
+</html>

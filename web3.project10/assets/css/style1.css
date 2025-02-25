@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazirmatn, sans-serif;
+}
+.users {
+  text-align: center;
+  padding: 10px;
+}
+.users table {
+  width: 100%;
+}
+.users table,
+.users th,
+.users td {
+  border: 1px solid #ffffff;
+  border-collapse: collapse;
+  padding: 5px;
+  font-size: 12px;
+}
+.users th {
+  background-color: #2f3542;
+  color: #ffffff;
+}
+.users tr:nth-child(2n) {
+  background-color: #f1f2f6;
+}
+.users tr:nth-child(2n + 1) {
+  background-color: #ced6e0;
+}
+.users a {
+  text-decoration: none;
+}
+.users #btn-view {
+  background-color: #0652dd;
+  color: #ffffff;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.users #btn-edit {
+  background-color: #009432;
+  color: #ffffff;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.users #btn-delete {
+  background-color: #c23616;
+  color: #ffffff;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+/* .......................USER */
+.user-box {
+  margin: 150px auto;
+  width: 350px;
+  /* From https://css.glass */
+  background: rgba(177, 208, 235, 0.65);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.3px);
+  -webkit-backdrop-filter: blur(8.3px);
+  border: 1px solid rgba(177, 208, 235, 0.38);
+}
+.user .box-detailes {
+  padding: 10px;
+}
+.user .detailes-role {
+  color: #d3def4;
+  padding: 3px 6px;
+  font-size: 12px;
+  border: none;
+  background-color: #3742fa;
+  border-radius: 10px;
+  display: inline-block;
+}
+.user .detailes-info {
+  font-size: 14px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: #739cef;
+  border-bottom: 1px solid #3742fa;
+}
+.user .detailes-info span {
+  color: #3742fa;
+}
