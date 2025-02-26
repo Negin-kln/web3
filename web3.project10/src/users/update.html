@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style1.css" />
+  </head>
+  <body>
+    <main class="update">
+      <form class="update-form">
+        <h2>Update Information</h2>
+        <div id="form-role">
+          <label for="role">Role:</label>
+          <input type="text" id="role" />
+        </div>
+        <div class="form-div">
+          <div>
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="lastname">Last Name:</label><br />
+            <input type="text" id="lastname" />
+          </div>
+        </div>
+        <div class="form-div">
+          <div>
+            <label for="Phone">Phone Number:</label><br />
+            <input type="tel" id="phone" />
+          </div>
+          <div>
+            <label for="emial">Email:</label><br />
+            <input type="emial" id="email" />
+          </div>
+        </div>
+        <div>
+          <label for="address">Address:</label><br />
+          <textarea id="address"></textarea>
+        </div>
+        <div>
+          <button type="submit" onclick="clickHandler(this)">submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      let id = getParameterByName("id");
+      axios
+        .get(`http://127.0.0.1:3000/users/${id}`)
+        .then((response) => {
+          let users = response.data;
+          document.getElementById("name").value = `${users.name}`;
+          document.getElementById("lastname").value = `${users.lastName}`;
+          document.getElementById("phone").value = `${users.phone}`;
+          document.getElementById("email").value = `${users.email}`;
+          document.getElementById("address").value = `${users.address}`;
+          document.getElementById("role").value = `${users.role}`;
+        })
+        .catch((error) => {
+          console.error("Error fetching user data:", error);
+        });
+      function clickHandler() {
+        const updatedData = {
+          name: document.getElementById("name").value,
+          lastName: document.getElementById("lastname").value,
+          email: document.getElementById("email").value,
+          address: document.getElementById("address").value,
+          role: document.getElementById("role").value,
+          phone: Number(document.getElementById("phone").value),
+        };
+        axios
+          .put(`http://127.0.0.1:3000/users/${id}`, updatedData)
+          .then((response) => {
+            console.log("Updated:", response.data);
+            window.location.assign(
+              "http://127.0.0.1:5500/src/users/users.html"
+            );
+            alert("اطلاعات با موفقیت به‌روزرسانی شد!");
+          })
+          .catch((error) => {
+            console.error("Error updating:", error);
+            alert("خطا در به‌روزرسانی اطلاعات!");
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -5,8 +5,20 @@
   font-family: Vazirmatn, sans-serif;
 }
 .users {
-  text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.users .add-btn {
+  width: 60px;
+  border-radius: 5px;
+  background-color: #2f3542;
+  color: #ced6e0;
+  margin: 5px 0;
+  padding: 2px 0;
+  font-weight: 600;
+  text-align: center;
 }
 .users table {
   width: 100%;
@@ -54,7 +66,6 @@
 .user-box {
   margin: 150px auto;
   width: 350px;
-  /* From https://css.glass */
   background: rgba(177, 208, 235, 0.65);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -85,4 +96,121 @@
 }
 .user .detailes-info span {
   color: #3742fa;
+}
+/* ......................update */
+.update-form {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 10px;
+  margin: 150px auto;
+  color: #06200f;
+  background: rgba(0, 148, 50, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(0, 148, 50, 0.28);
+}
+.update-form h2 {
+  text-align: center;
+  border-bottom: 2px solid #086126;
+  color: #086126;
+  margin-bottom: 10px;
+}
+.update-form #form-role {
+  color: #e84118;
+  font-weight: 600;
+}
+.update-form #form-role input {
+  border: none;
+  border-bottom: 2px solid #e84118;
+  background-color: transparent;
+  color: #e84118;
+  width: 50px;
+  text-align: center;
+}
+.update .form-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.update-form textarea {
+  margin: 0 auto;
+  width: 380px;
+}
+.update-form input,
+.update-form textarea {
+  border: 2px solid #086126;
+  border-radius: 10px;
+  color: #086126;
+  background-color: #d7f8e2;
+  padding: 0 5px;
+  font-size: 14px;
+  outline: none;
+}
+.update-form button {
+  border: none;
+  background-color: #06200f;
+  padding: 1px 5px;
+  border-radius: 10px;
+  color: #ffffff;
+  margin: 5px 0;
+  width: 150px;
+}
+.update-form > :last-child {
+  text-align: center;
+}
+/* .........................create */
+.create-form {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 10px;
+  margin: 150px auto;
+  color: #2f3542;
+  background: rgba(214, 214, 214, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(214, 214, 214, 0.25);
+}
+.create-form h2 {
+  text-align: center;
+  border-bottom: 2px solid #838485;
+  color: #838485;
+  margin-bottom: 10px;
+}
+.create .form-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-form textarea {
+  margin: 0 auto;
+  width: 380px;
+}
+.create-form input,
+.create-form textarea {
+  border: 2px solid #838485;
+  border-radius: 10px;
+  color: #2f3542;
+  background-color: #ced6e0;
+  padding: 0 5px;
+  font-size: 14px;
+}
+.create-form button {
+  border: none;
+  background-color: #2f3542;
+  padding: 1px 5px;
+  border-radius: 10px;
+  color: #ffffff;
+  margin: 5px 0;
+  width: 150px;
+}
+.create-form > :last-child {
+  text-align: center;
 }

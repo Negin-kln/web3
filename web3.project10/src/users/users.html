@@ -13,7 +13,8 @@
   </head>
   <body>
     <main class="users">
-      <h1>users</h1>
+      <h1>Users Information</h1>
+      <button class="add-btn" onclick="clickHandler()">+Add</button>
       <table class="list">
         <tr>
           <th>Id</th>
@@ -38,14 +39,34 @@
           <td>${user.email}</td>
           <td>${user.role}</td>
           <td><a id="btn-view" href="user.html?id=${user.id}">view</a></td>
-          <td><a id="btn-edit">edit</a></td>
-          <td><a id="btn-delete">delete</a></td>`;
+          <td><a id="btn-edit" href="update.html?id=${user.id}">edit</a></td>
+          <td><span id="btn-delete" onclick="userHandler(this)" data-id="${user.id}" >delete</span></td>`;
             usersList.appendChild(userInfo);
           });
         })
         .catch((error) => {
           alert("اطلاعات به درستی دریافت نشد.لطفا دوباره تلاش کنید.", error);
         });
+      function clickHandler() {
+        window.location.assign("http://127.0.0.1:5500/src/users/create.html");
+      }
+      function userHandler(event) {
+        let userId = event.getAttribute("data-id");
+        console.log(userId);
+        btnDeleteHandler(userId);
+      }
+      function btnDeleteHandler(userId) {
+        axios
+          .delete(`http://127.0.0.1:3000/users/${userId}`)
+          .then((response) => {
+            console.log("Deleted:", response.data);
+            alert("کاربر با موفقیت حذف شد!");
+          })
+          .catch((error) => {
+            console.error("Error deleting:", error);
+            alert("خطا در حذف کاربر!");
+          });
+      }
     </script>
   </body>
 </html>

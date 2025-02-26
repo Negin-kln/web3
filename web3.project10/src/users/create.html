@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../assets/css/style1.css" />
+  </head>
+  <body>
+    <main class="create">
+      <form class="create-form">
+        <h2>Create</h2>
+        <div class="form-div">
+          <div>
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="lastname">Last Name:</label><br />
+            <input type="text" id="lastname" />
+          </div>
+        </div>
+        <div class="form-div">
+          <div>
+            <label for="Phone">Phone Number:</label><br />
+            <input type="tel" id="phone" />
+          </div>
+          <div>
+            <label for="emial">Email:</label><br />
+            <input type="emial" id="email" />
+          </div>
+        </div>
+        <div>
+          <label for="address">Address:</label><br />
+          <textarea id="address"></textarea>
+        </div>
+        <div>
+          <button type="submit" onclick="clickHandler(this)">submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function clickHandler() {
+        axios
+          .post(`http://127.0.0.1:3000/users`, {
+            name: document.getElementById("name").value,
+            lastName: document.getElementById("lastname").value,
+            email: document.getElementById("email").value,
+            address: document.getElementById("address").value,
+            role: "user",
+            phone: Number(document.getElementById("phone").value),
+          })
+          .then((response) => {
+            console.log("Created:", response.data);
+            window.location.assign(
+              "http://127.0.0.1:5500/src/users/users.html"
+            );
+            alert("اطلاعات با موفقیت ثبت شد.");
+          })
+          .catch((error) => {
+            console.error("Error creating:", error);
+            alert("مشکلی پیش آمده! لطفا مجددا تلاش کنید.");
+          });
+      }
+    </script>
+  </body>
+</html>

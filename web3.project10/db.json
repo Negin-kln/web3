@@ -23,24 +23,51 @@
       "views": 263
     }
   ],
-  "users":[
+  "users": [
     {
-      "id":"1",
-      "name":"negin",
-      "lastName":"kalantari",
-      "email":"neginkalantari@gmail.com",
-      "address":"arak-khiyaban khoram",
-      "role":"admin",
-      "phone":"09189631873"
+      "name": "negin",
+      "lastName": "kalantari",
+      "email": "neginkalantari@gmail.com",
+      "address": "arak-khiyaban khoram",
+      "role": "admin",
+      "phone": 9189631873,
+      "id": "1"
     },
     {
-      "id":"2",
-      "name":"arezo",
-      "lastName":"baban",
-      "email":"baban@gmail.com",
-      "address":"tehran-meydan malek",
-      "role":"user",
-      "phone":"09129641953"
+      "name": "arezo",
+      "lastName": "baban",
+      "email": "baban@gmail.com",
+      "address": "tehran-meydan malek",
+      "role": "user",
+      "phone": 9129641953,
+      "id": "2"
+    },
+    {
+      "name": "Kimia",
+      "lastName": "Salehi",
+      "email": "kimia1998@gmail.com",
+      "address": "arak-khiyaban emam",
+      "role": "admin",
+      "phone": 91656462,
+      "id": "0814"
+    },
+    {
+      "id": "1d2e",
+      "name": "nazanin",
+      "lastName": "ahmadi",
+      "email": "nazi1203@gmail.com",
+      "address": "shiraz ",
+      "role": "user",
+      "phone": 9189632584
+    },
+    {
+      "id": "bc5c",
+      "name": "maral",
+      "lastName": "abasi",
+      "email": "maral4581@gmail.com",
+      "address": "hamedan",
+      "role": "user",
+      "phone": 1235451
     }
   ]
 }
