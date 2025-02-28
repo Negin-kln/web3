@@ -147,3 +147,25 @@ function different2(setA, setB) {
 }
 result = different2(setA, setB);
 console.log(result);
+// ----------------------exp.88
+const min = parseInt(prompt("Enter a min value: "));
+const max = parseInt(prompt("Enter a max value: "));
+const a = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(`Random value between ${min} and ${max} is ${a}`);
+// ----------------------exp.89
+const url1 = window.location.href;
+const url2 = document.URL;
+console.log(url1);
+console.log(url2);
+// ----------------------exp.90
+function validateEmail(email_id) {
+  const regex_pattern =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (regex_pattern.test(email_id)) {
+    console.log("The email address is valid");
+  } else {
+    console.log("The email address is not valid");
+  }
+}
+validateEmail("abc123@gmail.com");
+validateEmail("hello@com");
