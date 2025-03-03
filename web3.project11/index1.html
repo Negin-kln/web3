@@ -197,12 +197,9 @@
         $("input").keyup(function () {
           let regex = new RegExp($(this).attr("data-regex"));
           let inputValue = $(this).val();
-          if (regex.test(inputValue) == false) {
-            $(this).next().removeClass("hidden");
-          } else {
-            $(this).next().addClass("hidden");
-          }
-          if (isNationalIdValid(inputValue) == false) {
+          if (
+            (regex.test(inputValue) || isNationalIdValid(inputValue)) == false
+          ) {
             $(this).next().removeClass("hidden");
           } else {
             $(this).next().addClass("hidden");
