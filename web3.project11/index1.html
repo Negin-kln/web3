@@ -19,7 +19,7 @@
       }
       form {
         width: 400px;
-        margin: 200px auto;
+        margin: 150px auto;
         padding: 20px;
         /* From https://css.glass */
         background: rgba(48, 47, 117, 0.64);
@@ -33,6 +33,7 @@
       form input {
         border-radius: 20px;
         padding: 2px 7px;
+        margin-top: 2px;
         outline: none;
         border: 1px solid #dcdde1;
       }
@@ -105,17 +106,36 @@
             <input type="text" id="nationalcode" />
             <p class="alert hidden">NationalCode is invalid</p>
           </div>
-          <!-- <div>
-            <label for="name">name:</label><br />
-            <input type="text" id="name" />
-            <p class="alert hidden"></p>
-          </div> -->
+          <div>
+            <label for="age">Age:</label><br />
+            <input type="text" id="age" data-regex="^[0-9]{1,3}" />
+            <p class="alert hidden">Age is invalid</p>
+          </div>
         </div>
-        <!-- <div>
-          <label for="name">name:</label><br />
-          <input type="text" id="name" />
-          <p class="alert hidden"></p>
-        </div> -->
+        <div class="form-div">
+          <div>
+            <label for="creditcard">CreditCard:</label><br />
+            <input type="text" id="creditcard" data-regex="^\d{16}$" />
+            <p class="alert hidden">CreditCard is invalid</p>
+          </div>
+          <div>
+            <label for="age">Avrage:</label><br />
+            <input type="text" id="age" data-regex="1[0-9]{1}\.?[0-9]{0,2}?" />
+            <p class="alert hidden">PhoneNumber is invalid</p>
+          </div>
+        </div>
+        <div class="form-div">
+          <div>
+            <label for="postalcode">Postalcode:</label><br />
+            <input type="text" id="postalcode" data-regex="^\d{10}$" />
+            <p class="alert hidden">Postalcode is invalid</p>
+          </div>
+          <div>
+            <label for="date">Date of birth:</label><br />
+            <input type="text" id="date" data-regex="^\d{4}-\d{2}-\d{2}$" />
+            <p class="alert hidden">Date is invalid</p>
+          </div>
+        </div>
         <div>
           <button>submit</button>
         </div>
