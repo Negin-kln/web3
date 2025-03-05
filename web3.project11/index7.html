@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScrollMagic Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+      h1 {
+        text-align: center;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      .js {
+        background-color: rgb(240, 240, 222);
+        color: rgb(148, 148, 10);
+      }
+      .java {
+        background-color: rgb(240, 159, 159);
+        color: #800020;
+      }
+      .go {
+        background-color: rgb(179, 240, 240);
+        color: rgb(16, 131, 131);
+      }
+      .python {
+        background-color: rgb(183, 183, 240);
+        color: darkblue;
+      }
+      #pinContainer {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .panel {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        padding-top: 30px;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+        margin: 10px auto;
+      }
+      p {
+        width: 500px;
+        margin: 0 auto;
+        font-size: 18px;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>زبان های برنامه نویسی</h1>
+    <div id="pinContainer">
+      <div id="slideContainer">
+        <section class="panel js">
+          <b>java script</b>
+          <div>
+            <img src="assets/image/javascript-1.jpg" alt="JavaScript" />
+            <p>
+              JavaScript یا به اختصار JS یکی از محبوبترین زبان‌های برنامه نویسی
+              است. جاوا اسکریپت زبانی سطح بالا، شی‌گرا، داینامیک و تفسیری است که
+              از شیوه‌های مختلف برنامه نویسی پشتیبانی می‌کند. از این زبان
+              می‌توان برای برنامه نویسی سمت سرور (Server Side)، اپلیکیشن‌های
+              موبایل، بازی و اپلیکیشن‌های دسکتاپ استفاده کرد.
+            </p>
+          </div>
+        </section>
+        <section class="panel java">
+          <b>java</b>
+          <div>
+            <img src="assets/image/images.png" alt="Java" />
+            <p>
+              جاوا (به انگلیسی: Java ) یک زبان برنامه‌نویسیِ شیءگرا است که
+              نخستین بار توسط جیمز گاسلینگ در شرکت سان‌مایکروسیستمز ایجاد گردید
+              و در سال ۱۹۹۱ به عنوان بخشی از سکوی جاوا منتشر شد. زبان جاوا شبیه
+              به سی‌پلاس‌پلاس است؛ اما مدل شیءگرایی آسان‌تری دارد و از
+              قابلیت‌های سطح پایین کمتری پشتیبانی می‌کند.
+            </p>
+          </div>
+        </section>
+        <section class="panel go">
+          <b>go</b>
+          <div>
+            <img src="assets/image/go.png" alt="JavaScript" />
+            <p>
+              زبان Go برای حل پیچیدگی روز افزون پایگاه‌های کد در گوگل پدیدار شد.
+              پس از ظهور، بسیاری از برنامه‌های کاربردی «مبتنی بر ابر»
+              (Cloud-Based) و «سمت سرور» (Server-Side) آن را پذیرفتند. هم‌اکنون
+              در توسعه ابزارهای خط فرمان، در هوش مصنوعی و علم داده مورد استفاده
+              قرار می‌گیرد.
+            </p>
+          </div>
+        </section>
+        <section class="panel python">
+          <b>python</b>
+          <div>
+            <img src="assets/image/python.png" alt="JavaScript" />
+            <p>
+              پایتون (به انگلیسی: Python ) یک زبان برنامه‌نویسی شیءگرا، متن
+              باز،تفسیری، سطح بالا، و همه منظوره است، که خیدو فان روسوم (Guido
+              van Rossum) هلندی آن را طراحی کرده‌است، و اولین بار در سال ۱۹۹۱
+              منتشر شده‌است. فلسفه اصلی طراحی پایتون «خوانایی بالای کد» است و
+              نویسه‌های فاصله خالی در آن معنادار هستند و مکرر استفاده می‌شوند.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+
+    <script>
+      $(function () {
+        var controller = new ScrollMagic.Controller();
+        var wipeAnimation = new TimelineMax()
+          .fromTo(
+            "section.panel.java",
+            1,
+            { x: "-100%" },
+            { x: "0%", ease: Linear.easeNone }
+          )
+          .fromTo(
+            "section.panel.go",
+            1,
+            { x: "100%" },
+            { x: "0%", ease: Linear.easeNone }
+          )
+          .fromTo(
+            "section.panel.python",
+            1,
+            { y: "-100%" },
+            { y: "0%", ease: Linear.easeNone }
+          );
+        new ScrollMagic.Scene({
+          triggerElement: "#pinContainer",
+          triggerHook: "onLeave",
+          duration: "300%",
+        })
+          .setPin("#pinContainer")
+          .setTween(wipeAnimation)
+          .addIndicators()
+          .addTo(controller);
+      });
+    </script>
+  </body>
+</html>

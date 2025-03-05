@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Stellar Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+      .section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 30px;
+      }
+      #section1 {
+        background: url("assets/image/دیوان-حافظ-یاقوت-کویر-1.jpg") no-repeat
+          center center/cover;
+      }
+      #section2 {
+        background-color: #f3e6d4;
+      }
+      #section3 {
+        background: url("assets/image/hafez-3.jpg") no-repeat center
+          center/cover;
+      }
+      .section#section2 {
+        flex-direction: column;
+        padding: 30px;
+        height: 40vh;
+        color: #fd2525;
+      }
+      h1 {
+        color: rgb(93, 26, 26);
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="section1"
+      class="section"
+      data-stellar-background-ratio="0.5"
+    ></div>
+    <div id="section2" class="section" data-stellar-background-ratio="0.5">
+      <h1>حافظ شیرازی</h1>
+      <p>
+        خواجه شمس‌الدین محمد شیرازی متخلص به «حافظ»، غزلسرای بزرگ و از خداوندان
+        شعر و ادب پارسی است. وی حدود سال ۷۲۶ هجری قمری در شیراز متولد شد. علوم و
+        فنون را در محفل درس استادان زمان فراگرفت و در علوم ادبی عصر پایه‌ای رفیع
+        یافت. خاصه در علوم فقهی و الهی تأمل بسیار کرد و قرآن را با چهارده روایت
+        مختلف از بر داشت. گوته دانشمند بزرگ و شاعر و سخنور مشهور آلمانی دیوان
+        شرقی خود را به نام او و با کسب الهام از افکار وی تدوین کرد. دیوان اشعار
+        او شامل غزلیات، چند قصیده، چند مثنوی، قطعات و رباعیات است. وی به سال ۷۹۲
+        هجری قمری در شیراز درگذشت. آرامگاه او در حافظیهٔ شیراز زیارتگاه
+        صاحبنظران و عاشقان شعر و ادب پارسی است.
+      </p>
+    </div>
+    <div
+      id="section3"
+      class="section"
+      data-stellar-background-ratio="0.5"
+    ></div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/js/jquery.stellar.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.stellar({
+          horizontalScrolling: false,
+          responsive: true,
+        });
+      });
+    </script>
+  </body>
+</html>

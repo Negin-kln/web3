@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smooth Scroll Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+        direction: rtl;
+      }
+      .nav-buttons {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+      .nav-buttons button {
+        display: block;
+        margin: 5px 0;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+      }
+      .nav-buttons button:hover {
+        background: #0056b3;
+      }
+      section {
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        color: black;
+        text-align: center;
+      }
+      section img {
+        width: 400px;
+        height: 250px;
+        border-radius: 10px;
+      }
+      #section1 {
+        background: #f7ebc0;
+      }
+      #section2 {
+        background: #e09c9c;
+      }
+      #section3 {
+        background: #b6eaea;
+      }
+      #section4 {
+        background: #b0baef;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-buttons">
+      <button data-target="#section1">Java Script</button>
+      <button data-target="#section2">Java</button>
+      <button data-target="#section3">Go</button>
+      <button data-target="#section4">python</button>
+    </div>
+    <section id="section1">
+      <div>
+        <img src="assets/image/javascript-1.jpg" alt="JavaScript" />
+        <p>
+          JavaScript یا به اختصار JS یکی از محبوبترین زبان‌های برنامه نویسی است.
+          جاوا اسکریپت زبانی سطح بالا، شی‌گرا، داینامیک و تفسیری است که از
+          شیوه‌های مختلف برنامه نویسی پشتیبانی می‌کند. از این زبان می‌توان برای
+          برنامه نویسی سمت سرور (Server Side)، اپلیکیشن‌های موبایل، بازی و
+          اپلیکیشن‌های دسکتاپ استفاده کرد.
+        </p>
+      </div>
+    </section>
+    <section id="section2">
+      <div>
+        <img src="assets/image/images.png" alt="Java" />
+        <p>
+          جاوا (به انگلیسی: Java ) یک زبان برنامه‌نویسیِ شیءگرا است که نخستین
+          بار توسط جیمز گاسلینگ در شرکت سان‌مایکروسیستمز ایجاد گردید و در سال
+          ۱۹۹۱ به عنوان بخشی از سکوی جاوا منتشر شد. زبان جاوا شبیه به
+          سی‌پلاس‌پلاس است؛ اما مدل شیءگرایی آسان‌تری دارد و از قابلیت‌های سطح
+          پایین کمتری پشتیبانی می‌کند.
+        </p>
+      </div>
+    </section>
+    <section id="section3">
+      <div>
+        <img src="assets/image/go.png" alt="JavaScript" />
+        <p>
+          زبان Go برای حل پیچیدگی روز افزون پایگاه‌های کد در گوگل پدیدار شد. پس
+          از ظهور، بسیاری از برنامه‌های کاربردی «مبتنی بر ابر» (Cloud-Based) و
+          «سمت سرور» (Server-Side) آن را پذیرفتند. هم‌اکنون در توسعه ابزارهای خط
+          فرمان، در هوش مصنوعی و علم داده مورد استفاده قرار می‌گیرد.
+        </p>
+      </div>
+    </section>
+    <section id="section4">
+      <div>
+        <img src="assets/image/python.png" alt="JavaScript" />
+        <p>
+          پایتون (به انگلیسی: Python ) یک زبان برنامه‌نویسی شیءگرا، متن
+          باز،تفسیری، سطح بالا، و همه منظوره است، که خیدو فان روسوم (Guido van
+          Rossum) هلندی آن را طراحی کرده‌است، و اولین بار در سال ۱۹۹۱ منتشر
+          شده‌است. فلسفه اصلی طراحی پایتون «خوانایی بالای کد» است و نویسه‌های
+          فاصله خالی در آن معنادار هستند و مکرر استفاده می‌شوند.
+        </p>
+      </div>
+    </section>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
+    <script>
+      $(function () {
+        $(".nav-buttons button").on("click", function () {
+          var target = $(this).attr("data-target");
+          $.smoothScroll({
+            scrollTarget: target,
+          });
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>

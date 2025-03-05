@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "dropify": "^0.2.2",
+    "jquery-toast-plugin": "^1.3.2",
+    "magnific-popup": "^1.2.0",
     "scrollmagic": "^2.0.8"
   }
 }

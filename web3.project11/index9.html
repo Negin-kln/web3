@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slick Carousel Example</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .slider div {
+        background: #f2c4f3;
+        border: 1px solid #f268f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Slick Carousel Example</h1>
+    <div class="slider">
+      <div><img src="assets/image/rab1.png" alt="" /></div>
+      <div><img src="assets/image/rab2.png" alt="" /></div>
+      <div><img src="assets/image/rab3.png" alt="" /></div>
+      <div><img src="assets/image/rab4.png" alt="" /></div>
+      <div><img src="assets/image/rab5.png" alt="" /></div>
+      <div><img src="assets/image/rab6.png" alt="" /></div>
+      <div><img src="assets/image/rab7.png" alt="" /></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <!-- Initialize Slick Carousel -->
+    <script>
+      $(document).ready(function () {
+        $(".slider").slick({
+          slidesToShow: 3, // تعداد اسلایدهای نمایش داده شده به طور همزمان
+          slidesToScroll: 1, // تعداد اسلایدهایی که با هر اسکرول جابه‌جا می‌شوند
+          infinite: true, // اسلایدر به صورت بی‌نهایت (حلقه‌ای) کار کند
+          dots: true, // نمایش نقاط (dots) برای پیمایش
+          responsive: [
+            {
+              breakpoint: 1024, // برای عرض‌های کمتر از 1024 پیکسل
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 600, // برای عرض‌های کمتر از 600 پیکسل
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/magnific-popup/dist/magnific-popup.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        border: 1px solid rgb(72, 7, 7);
+        text-decoration: none;
+        background-color: rgb(72, 7, 7);
+        color: white;
+        padding: 5px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent-container">
+      <a href="assets/image/1.jpg">click 1</a>
+      <a href="assets/image/2.jfif">click 2</a>
+      <a href="assets/image/3.jfif">click 3</a>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script>
+      $(".parent-container").magnificPopup({
+        delegate: "a", // child items selector, by clicking on it popup will open
+        type: "image",
+        // other options
+      });
+    </script>
+  </body>
+</html>

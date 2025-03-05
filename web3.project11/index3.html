@@ -4,14 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="style.css" rel="stylesheet" media="all" />
-    <link href="portrait.css" rel="stylesheet" media="(orientation:portrait)" />
-    <link href="print.css" rel="stylesheet" media="print" />
+    <link
+      rel="stylesheet"
+      href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+      }
+      .btn1 {
+        border: 1px solid green;
+        background-color: green;
+        color: white;
+        border-radius: 15px;
+        padding: 2px 5px;
+      }
+      .btn2 {
+        border: 1px solid red;
+        background-color: red;
+        color: white;
+        border-radius: 15px;
+        padding: 2px 5px;
+      }
+    </style>
   </head>
   <body>
-    <script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
-    <script src="node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-    <script src="node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+    <button class="btn1">click me</button>
+    <button class="btn2">click me</button>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script>
+      $(".btn1").click(function () {
+        $.toast({
+          text: "شما کلید شماره یک را فشرده اید",
+          showHideTransition: "slide",
+          bgColor: "green",
+          textColor: "#000",
+          allowToastClose: false,
+          hideAfter: 5000,
+          stack: 5,
+          textAlign: "left",
+          position: "bottom-left",
+        });
+      });
+      $(".btn2").click(function () {
+        $.toast({
+          text: "شما کلید شماره دو را فشرده اید",
+          showHideTransition: "slide",
+          bgColor: "red",
+          textColor: "#000",
+          hideAfter: 3000,
+          stack: 2,
+          textAlign: "right",
+          position: "top-right",
+        });
+      });
+    </script>
   </body>
 </html>
-

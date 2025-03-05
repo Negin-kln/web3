@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LightSlider Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css"
+    />
+    <style>
+      #lightSlider li {
+        background: #f4f4f4;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ddd;
+        margin: 10px;
+      }
+      img {
+        width: 300px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">LightSlider Example</h1>
+    <main>
+      <ul id="lightSlider">
+        <li>
+          <img src="assets/image/go.png" alt="" />
+        </li>
+        <li>
+          <img src="assets/image/images.png" alt="" />
+        </li>
+        <li>
+          <img src="assets/image/javascript-1.jpg" alt="" />
+        </li>
+        <li>
+          <img src="assets/image/python.png" alt="" />
+        </li>
+        <li>
+          <img src="assets/image/c++.jfif" alt="" />
+        </li>
+        <li>
+          <img src="assets/image/matlab.png" alt="" />
+        </li>
+      </ul>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#lightSlider").lightSlider({
+          item: 3,
+          slideMargin: 20,
+          loop: true,
+          pager: true,
+          speed: 400,
+          auto: true,
+          loop: true,
+          pause: 1000,
+          responsive: [
+            {
+              breakpoint: 800,
+              settings: {
+                item: 2,
+                slideMargin: 10,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                item: 1,
+                slideMargin: 0,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
