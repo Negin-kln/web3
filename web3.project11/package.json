@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dropify": "^0.2.2",
+    "scrollmagic": "^2.0.8"
+  }
+}

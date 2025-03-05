@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/dropify/dist/css/dropify.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazirmatn, sans-serif;
+      }
+      .dropify-wrapper.has-error {
+        border-color: #41f3f0;
+      }
+      .dropify-wrapper ~ .dropify-errors-container ul li {
+        color: #41f3f0;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="file"
+      class="dropify1"
+      data-height="150"
+      data-max-file-size="30M"
+      data-min-width="400"
+      data-max-width="1000"
+      data-min-height="400"
+      data-max-height="1000"
+      data-show-remove="false"
+      data-show-loader="false"
+      data-allowed-file-extensions="pdf png psd"
+    />
+    <input
+      type="file"
+      class="dropify"
+      data-height="200"
+      data-max-file-size="5M"
+      data-errors-position="outside"
+      data-show-loader="false"
+    />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script>
+      var drEvent = $(".dropify1").dropify({
+        messages: {
+          default: "یک فایل را آپلود کنید",
+          replace: "یک فایل را آپلود کنید",
+          error: "فایل به درستی آپلود نشده است.",
+        },
+        error: {
+          fileSize: "The file size is too big ({{ value }} max).",
+          minWidth: "The image width is too small ({{ value }}}px min).",
+          maxWidth: "The image width is too big ({{ value }}}px max).",
+          minHeight: "The image height is too small ({{ value }}}px min).",
+          maxHeight: "The image height is too big ({{ value }}px max).",
+          imageFormat: "The image format is not allowed ({{ value }} only).",
+        },
+      });
+      drEvent.on("dropify.error.fileSize", function (event, element) {
+        alert("Filesize error message!");
+      });
+      drEvent.on("dropify.error.minWidth", function (event, element) {
+        alert("Min width error message!");
+      });
+      drEvent.on("dropify.error.maxWidth", function (event, element) {
+        alert("Max width error message!");
+      });
+      drEvent.on("dropify.error.minHeight", function (event, element) {
+        alert("Min height error message!");
+      });
+      drEvent.on("dropify.error.maxHeight", function (event, element) {
+        alert("Max height error message!");
+      });
+      drEvent.on("dropify.error.imageFormat", function (event, element) {
+        alert("Image format error message!");
+      });
+      $(".dropify").dropify({
+        messages: {
+          default: "بکش و رها کن",
+          replace: "بکش و رها کن",
+          remove: "حذف",
+          error: "فایل به درستی قرار نگرفت",
+        },
+        error: {
+          fileSize: "این فایل بزرگ است ({{ value }} max).",
+        },
+      });
+    </script>
+  </body>
+</html>
