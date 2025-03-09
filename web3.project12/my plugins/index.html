@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton"></button>
+    <button id="myButton1"></button>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.customButton = function (options) {
+          var settings = $.extend(
+            {
+              text: "Click Me",
+              color: "#6a89cc",
+              backgroundColor: "#0c2461",
+              fontSize: "16px",
+              padding: "5px 10px",
+              borderRadius: "10px",
+              onClick: function () {},
+            },
+            options
+          );
+          return this.each(function () {
+            var $button = $(this);
+            $button.css({
+              color: settings.color,
+              "background-color": settings.backgroundColor,
+              "font-size": settings.fontSize,
+              padding: settings.padding,
+              "border-radius": settings.borderRadius,
+              border: "none",
+              cursor: "pointer",
+              outline: "none",
+            });
+            $button.text(settings.text);
+            $button.click(settings.onClick);
+          });
+        };
+      })(jQuery);
+      $(function () {
+        $("#myButton").customButton({});
+        $("#myButton1").customButton({
+          text: "Submit",
+          color: "#ffffff",
+          backgroundColor: "#28a745",
+          fontSize: "16px",
+          padding: "12px 24px",
+          borderRadius: "8px",
+          onClick: function () {
+            alert("Button clicked!");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

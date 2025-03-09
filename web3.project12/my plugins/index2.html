@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        color: #8389da;
+        background-color: #1f2032;
+        text-decoration: none;
+        padding: 4px 8px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#" class="tooltip" data-tooltip="But mine do">do not break</a>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.customTooltip = function (optain) {
+          this.each(function () {
+            if ($(this).is("a")) {
+              $(this).hover(
+                function (e) {
+                  var text = $(this).attr("data-tooltip");
+                  $(`<div id="tooltip"/>`)
+                    .appendTo($(this))
+                    .text(text)
+                    .hide()
+                    .css({
+                      backgroundColor: "#000",
+                      color: "#fff",
+                      borderRadius: "3px",
+                      opacity: 0.8,
+                      position: "absolute",
+                      float: "left",
+                      padding: "3px 5px",
+                      margin: "5px",
+                    })
+                    .fadeIn("slow");
+                },
+                function () {
+                  $("#tooltip").remove();
+                }
+              );
+              $(this).mousemove(function (e) {
+                $(".tooltip").css({
+                  top: e.pageY + 10,
+                  left: e.pageX + 10,
+                });
+              });
+              return this;
+            }
+          });
+        };
+      })(jQuery);
+      $("a.tooltip").customTooltip();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .custom-toast {
+        position: fixed;
+        z-index: 1000;
+        display: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+      }
+      button {
+        color: #e1e339;
+        background-color: #13130b;
+        border: none;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="showToast">Show Toast</button>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.customToast = function (options) {
+          var settings = $.extend(
+            {
+              width: "200px",
+              height: "auto",
+              backgroundColor: "#333",
+              color: "#fff",
+              text: "This is a toast.",
+              position: "top-right",
+              duration: 3000,
+              animation: "fade",
+            },
+            options
+          );
+          var $toast = $('<div class="custom-toast"></div>')
+            .text(settings.text)
+            .css({
+              width: settings.width,
+              height: settings.height,
+              backgroundColor: settings.backgroundColor,
+              color: settings.color,
+            });
+          $("body").append($toast);
+          function positionToast() {
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            var toastWidth = $toast.outerWidth();
+            var toastHeight = $toast.outerHeight();
+            switch (settings.position) {
+              case "top-right":
+                $toast.css({
+                  top: "20px",
+                  right: "20px",
+                });
+                break;
+              case "top-left":
+                $toast.css({
+                  top: "20px",
+                  left: "20px",
+                });
+                break;
+              case "bottom-right":
+                $toast.css({
+                  bottom: "20px",
+                  right: "20px",
+                });
+                break;
+              case "bottom-left":
+                $toast.css({
+                  bottom: "20px",
+                  left: "20px",
+                });
+                break;
+              default:
+                $toast.css({
+                  top: "20px",
+                  right: "20px",
+                });
+            }
+          }
+          function showToast() {
+            positionToast();
+            $toast.fadeIn();
+            setTimeout(function () {
+              hideToast();
+            }, settings.duration);
+          }
+          function hideToast() {
+            if (settings.animation === "fade") {
+              $toast.fadeOut();
+            } else if (settings.animation === "slide") {
+              $toast.slideUp();
+            }
+          }
+          showToast();
+          return this;
+        };
+      })(jQuery);
+      $(function () {
+        $("#showToast").click(function () {
+          $("#myToast").customToast({
+            text: "Hello, this is a custom toast!",
+            backgroundColor: "#28a745",
+            color: "#fff",
+            position: "bottom-right",
+            duration: 5000,
+            animation: "slide",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

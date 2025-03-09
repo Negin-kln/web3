@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Page Plugin</title>
+    <style>
+      /* استایل‌های پیش‌فرض برای صفحه */
+      #myPage {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      .custom-header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .custom-detail {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .custom-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .custom-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myPage"></div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.customPage = function (options) {
+          // تنظیمات پیش‌فرض
+          var settings = $.extend(
+            {
+              header: "Welcome to My Page", // متن هدر
+              detail: "This is a custom page created using jQuery.", // متن بخش محتوا
+              buttonText: "Click Me", // متن دکمه
+              buttonClick: function () {
+                alert("Button clicked!"); // رویداد کلیک دکمه
+              },
+              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", // سایه باکس
+              imageUrl: "", // آدرس تصویر
+            },
+            options
+          );
+
+          // ایجاد ساختار صفحه
+          return this.each(function () {
+            var $box = $(this);
+
+            // پاک کردن محتوای قبلی
+            $box.empty();
+
+            // افزودن هدر
+            var $header = $('<div class="custom-header"></div>').text(
+              settings.header
+            );
+
+            // افزودن بخش محتوا
+            var $detail = $('<div class="custom-detail"></div>').text(
+              settings.detail
+            );
+            if (settings.imageUrl) {
+              var $image = $(
+                '<img src="' +
+                  settings.imageUrl +
+                  '" alt="Image" style="max-width: 100%; margin-bottom: 20px;">'
+              );
+              $box.append($image);
+            }
+            // افزودن دکمه
+            var $button = $('<button class="custom-button"></button>')
+              .text(settings.buttonText)
+              .click(settings.buttonClick);
+
+            // افزودن عناصر به باکس
+            $box.append($header).append($detail).append($button);
+
+            // اعمال سایه باکس
+            $box.css({
+              "box-shadow": settings.boxShadow,
+            });
+          });
+        };
+      })(jQuery);
+
+      // استفاده از پلاگین
+      $(document).ready(function () {
+        $("#myPage").customPage({
+          header: "This is title",
+          detail: "This is a test text",
+          buttonText: "Click Here",
+          buttonClick: function () {
+            alert("You clicked the button!");
+          },
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", // تغییر سایه
+          imageUrl: "../assets/image/1.jpg",
+        });
+      });
+    </script>
+  </body>
+</html>

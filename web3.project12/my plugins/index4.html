@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #myTable th,
+      #myTable td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #myTable th {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      #myTable th.sortable:hover {
+        background-color: #0056b3;
+      }
+
+      #myTable tr:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myTable"></div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.customTable = function (options) {
+          // تنظیمات پیش‌فرض
+          var settings = $.extend(
+            {
+              headers: [], // عناوین ستون‌ها
+              data: [], // داده‌های جدول
+              sortable: false, // امکان مرتب‌سازی
+              striped: false, // استایل راه‌راه (خط‌خطی)
+              hoverEffect: false, // افکت hover
+              onRowClick: null, // رویداد کلیک روی ردیف
+            },
+            options
+          );
+
+          // ایجاد ساختار جدول
+          return this.each(function () {
+            var $table = $(this);
+            $table.empty(); // پاک کردن محتوای قبلی جدول
+
+            // ایجاد سرستون‌ها (thead)
+            if (settings.headers.length > 0) {
+              var $thead = $("<thead></thead>");
+              var $headerRow = $("<tr></tr>");
+
+              $.each(settings.headers, function (index, header) {
+                var $th = $("<th></th>").text(header);
+                if (settings.sortable) {
+                  $th.addClass("sortable").attr("data-column", index);
+                }
+                $headerRow.append($th);
+              });
+
+              $thead.append($headerRow);
+              $table.append($thead);
+            }
+
+            // ایجاد بدنه جدول (tbody)
+            var $tbody = $("<tbody></tbody>");
+            $.each(settings.data, function (index, rowData) {
+              var $row = $("<tr></tr>");
+              $.each(rowData, function (colIndex, cellData) {
+                $row.append($("<td></td>").text(cellData));
+              });
+              $tbody.append($row);
+            });
+            $table.append($tbody);
+
+            // افزودن استایل‌های اضافی
+            if (settings.striped) {
+              $table.find("tbody tr:even").css("background-color", "#f9f9f9");
+            }
+
+            if (settings.hoverEffect) {
+              $table.find("tbody tr").hover(
+                function () {
+                  $(this).css("background-color", "#f1f1f1");
+                },
+                function () {
+                  $(this).css("background-color", "");
+                }
+              );
+            }
+
+            // افزودن رویداد کلیک روی ردیف
+            if (settings.onRowClick) {
+              $table.find("tbody tr").click(function () {
+                var rowData = [];
+                $(this)
+                  .find("td")
+                  .each(function () {
+                    rowData.push($(this).text());
+                  });
+                settings.onRowClick(rowData);
+              });
+            }
+
+            // امکان مرتب‌سازی ستون‌ها
+            if (settings.sortable) {
+              $table.find("th.sortable").click(function () {
+                var column = $(this).attr("data-column");
+                var rows = $table.find("tbody tr").get();
+
+                rows.sort(function (a, b) {
+                  var aVal = $(a).find("td").eq(column).text();
+                  var bVal = $(b).find("td").eq(column).text();
+                  return aVal.localeCompare(bVal);
+                });
+
+                $.each(rows, function (index, row) {
+                  $tbody.append(row);
+                });
+              });
+            }
+          });
+        };
+      })(jQuery);
+      $(document).ready(function () {
+        $("#myTable").customTable({
+          headers: ["Name", "Age", "City"],
+          data: [
+            ["Alice", 25, "New York"],
+            ["Bob", 30, "Los Angeles"],
+            ["Charlie", 35, "Chicago"],
+          ],
+          sortable: true,
+          striped: true,
+          hoverEffect: true,
+          onRowClick: function (rowData) {
+            console.log("Row clicked:", rowData);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
