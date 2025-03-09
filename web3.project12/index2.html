@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload Example</title>
+    <!-- استایل‌های پایه برای نمایش بهتر -->
+    <style>
+      .progress {
+        width: 100%;
+        background-color: #f3f3f3;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+      }
+      .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: #4caf50;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>آپلود فایل</h1>
+    <input type="file" id="fileupload" name="files[]" multiple />
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <div id="files" class="files"></div>
+
+    <!-- کتابخانه‌های مورد نیاز -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.32.0/js/jquery.fileupload.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#fileupload").fileupload({
+          url: "/upload", // آدرس سرور برای آپلود فایل
+          dataType: "json",
+          done: function (e, data) {
+            // پس از اتمام آپلود
+            $.each(data.result.files, function (index, file) {
+              $("<p>")
+                .text(file.name + " آپلود شد.")
+                .appendTo("#files");
+            });
+          },
+          progressall: function (e, data) {
+            // نمایش پیشرفت آپلود
+            var progress = parseInt((data.loaded / data.total) * 100, 10);
+            $(".progress-bar")
+              .css("width", progress + "%")
+              .text(progress + "%");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
