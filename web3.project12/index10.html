@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choices.js Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        direction: rtl;
+      }
+      h1 {
+        color: #333;
+      }
+      .choices__list--dropdown {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .choices__list--multiple .choices__item {
+        background-color: #007bff;
+        border: 1px solid #0056b3;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>انتخاب علاقه‌مندی‌ها</h1>
+    <form>
+      <label for="tags">علاقه‌مندی‌های خود را انتخاب کنید:</label>
+      <select id="tags" name="tags" multiple>
+        <option value="programming">برنامه‌نویسی</option>
+        <option value="design">طراحی</option>
+        <option value="music">موسیقی</option>
+        <option value="sports">ورزش</option>
+        <option value="travel">سفر</option>
+      </select>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tagSelect = document.getElementById("tags");
+        const choices = new Choices(tagSelect, {
+          removeItemButton: true, // نمایش دکمه حذف آیتم
+          searchEnabled: true, // فعال کردن قابلیت جستجو
+          placeholder: true, // نمایش placeholder
+          placeholderValue: "علاقه‌مندی‌های خود را انتخاب کنید...", // متن placeholder
+          duplicateItemsAllowed: false, // جلوگیری از انتخاب آیتم‌های تکراری
+        });
+      });
+    </script>
+  </body>
+</html>

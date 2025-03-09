@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>moment.js</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid #2e5b0a;
+        border-collapse: collapse;
+      }
+      th {
+        color: #2e5b0a;
+        background-color: #d4edc0;
+        padding: 5px;
+      }
+      td {
+        color: #2e5b0a;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>تاریخ</h1>
+    <div id="output"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+      const now = moment();
+      const todayDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+      const yesterdayDate = moment().subtract(1, "days").calendar();
+      const tomorrowDate = moment().add(1, "days").calendar();
+      const start = moment().startOf("day").fromNow();
+      document.getElementById("output").innerHTML = `<table>
+        <tr>
+        <th>Yesterday</th>
+        <th>Today</th>
+        <th>Tomorrow</th>
+        <th>start</th>
+        </tr>
+        <tr>
+          <td>
+            ${yesterdayDate}
+          </td>
+          <td>
+            ${todayDate}
+          </td>
+          <td>
+            ${tomorrowDate}
+          </td>
+          <td>
+            ${start}
+          </td>
+        </tr>
+          </table>
+        `;
+    </script>
+  </body>
+</html>

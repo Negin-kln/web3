@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="assets/plugins/dynamic-sidebar-nav/dynamic-sidebar-nav/css/style.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      button {
+        border: 1px solid #f39c12;
+        color: #ffffff;
+        background-color: #f39c12;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="sidebar-open">menu</button>
+    <div id="sidebar"></div>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/plugins/dynamic-sidebar-nav/dynamic-sidebar-nav/js/sidebar.js"></script>
+    <script>
+      let menuItems = {
+        Home: "/home",
+        Dashboard: "/dashboard",
+        Profile: "/profile",
+        Latest: "/latest",
+        Ups: "/updates",
+        News: "/news",
+      };
+      $("#sidebar").Sidebar({
+        items: menuItems,
+        header: "Header",
+        headerRef: "#",
+        width: 150,
+        sidebarColor: "#ffeaa7",
+        closeButtonColor: "#d63031",
+        headerColor: "#2d3436",
+        textColor: "#f39c12",
+        textAlign: "left",
+        closeButtonIcon: "&times;",
+      });
+    </script>
+  </body>
+</html>
