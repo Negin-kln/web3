@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      * {
+        font-family: Vazirmatn, sans-serif;
+      }
+    </style>
+  </head>
+  <body dir="rtl" class="bg-stone-200">
+    <header class="fixed w-full shadow-sm shadow-gray-400 bg-white z-50">
+      <nav class="p-2">
+        <div class="grid grid-flow-col items-center">
+          <div class="col-span-1">
+            <a href="#"
+              ><img
+                class="w-[80px]"
+                src="../assets/image/niazerooz-com-logo.png"
+                alt=""
+            /></a>
+          </div>
+          <div class="col-span-6 hidden md:block">
+            <ul class="flex text-[13px] text-gray-700">
+              <li>
+                <a href="#" class="group px-3">
+                  <i
+                    class="fa fa-user-o text-gray-300 group-hover:text-gray-500 pl-2"
+                    aria-hidden="true"
+                  ></i
+                  >پنل کاربری</a
+                >
+              </li>
+              <li>
+                <a href="#" class="group px-3">
+                  <i
+                    class="fa fa-map-o text-gray-300 group-hover:text-gray-500 pl-2"
+                    aria-hidden="true"
+                  ></i
+                  >انتخاب شهر</a
+                >
+              </li>
+
+              <li>
+                <a href="#" class="group px-3">
+                  <i
+                    class="fa fa-th-large text-gray-300 group-hover:text-gray-500 pl-2"
+                    aria-hidden="true"
+                  ></i>
+                  انتخاب گروه</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-1 text-[13px] text-gray-700 md:hidden sm:block">
+            <a href="#" class="group px-3">
+              <i
+                class="fa fa-user-o text-gray-300 group-hover:text-gray-500 pl-2"
+                aria-hidden="true"
+              ></i
+              >پنل کاربری</a
+            >
+          </div>
+          <div class="col-span-3 flex justify-end items-center">
+            <div class="flex">
+              <input
+                type="search"
+                name="search"
+                class="border border-gray-300 sm:w-[230px] text-[12px] px-2 py-1"
+                placeholder="جستجو"
+                id=""
+              />
+              <i
+                class="fa fa-search relative top-1.5 left-5 text-gray-300 text-[12px]"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="md:block hidden">
+              <a
+                href="#"
+                class="border border-amber-500 text-[12px] px-3 py-[5px] text-white bg-amber-500 w-[150px]"
+              >
+                درج آگهی رایگان
+              </a>
+            </div>
+            <div class="md:hidden sm:block hidden">
+              <a
+                href="#"
+                class="border border-amber-500 text-[12px] px-3 py-[5px] text-white bg-amber-500 w-[150px]"
+              >
+                آگهی رایگان
+              </a>
+            </div>
+            <div class="sm:hidden">
+              <a href="#" class="text-[15px] text-gray-300 font-light flex">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="md:hidden border-t border-gray-300 px-2 py-1">
+        <div class="grid grid-rows-1">
+          <ul class="row-span-1 flex text-[11px] text-gray-700">
+            <li>
+              <a href="#" class="group px-3">
+                انتخاب شهر
+                <i
+                  class="fa fa-angle-down text-amber-600"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+
+            <li>
+              <a href="#" class="group px-3">
+                انتخاب گروه
+                <i
+                  class="fa fa-angle-down text-amber-600"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-[100px]">
+      <div class="container mx-auto">
+        <div class="grid grid-flow-row">
+          <h1 class="row-span-1 text-center pt-10 pb-2">ورود به سایت</h1>
+          <div class="row-span-1 text-center text-[12px] pb-1 mx-auto">
+            عضو سایت نیستید؟
+            <a href="#" class="text-sky-600 hover:text-sky-800">ثبت نام کنید</a>
+          </div>
+          <div
+            class="row-auto shadow-sm shadow-gray-700 bg-white md:w-[500px] w-[350px] mx-auto mb-15"
+          >
+            <div class="grid grid-flow-row md:grid-flow-col text-[12px] p-10">
+              <form action="" class="row-span-8 md:col-span-1">
+                <div>
+                  <label for="name">نام کاربری یا ایمیل یا موبایل:</label><br />
+                  <input
+                    type="text"
+                    id="name"
+                    class="ring ring-gray-300 outline-none focus:shadow-sm focus:shadow-sky-400 focus:ring-sky-500 w-full my-2 p-[2px]"
+                  />
+                </div>
+                <div class="relative">
+                  <label for="password">رمز ورود:</label><br />
+                  <input
+                    type="password"
+                    id="password"
+                    class="ring ring-gray-300 outline-none focus:shadow-sm focus:shadow-sky-400 focus:ring-sky-500 w-full my-2 p-[2px]"
+                  />
+                  <div class="text-[16px]">
+                    <i
+                      class="fa fa-eye absolute right-2 bottom-3 text-sky-600"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </div>
+                <div class="flex justify-between pt-1">
+                  <div class="relative flex items-center">
+                    <input type="checkbox" class="peer absolute opacity-0" />
+                    <div
+                      class="w-3.5 h-3.5 border-[1.5px] bg-white border-gray-500 rounded-sm peer-checked:bg-green-500"
+                    ></div>
+                    <label class="px-1" for="check">مرا به خاطر بسپار</label>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="text-sky-600 hover:text-sky-800 text-[11px]"
+                    >
+                      فراموشی رمز ورود</a
+                    >
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <label for="code">کد امنیتی زیر:</label><br />
+                  <div class="flex">
+                    <input
+                      type="text"
+                      id="code"
+                      class="border-y-[1.5px] border-r-[1.5px] border-gray-300 outline-none focus:shadow-sm focus:shadow-sky-400 focus:ring-sky-500 w-[100px] my-2 p-[2px]"
+                    />
+                    <span
+                      class="border-y-[1.5px] bg-gray-100 border-gray-300 w-[50px] my-2 p-[2px] text-sky-700 text-center"
+                      >1234</span
+                    >
+                    <button
+                      class="border-y-[1.5px] border-l-[1.5px] border-gray-300 w-[30px] my-2 p-[2px] text-center hover:bg-gray-100"
+                    >
+                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <input
+                    type="submit"
+                    value="ورود"
+                    class="bg-sky-600 text-white px-10 py-1"
+                  />
+                </div>
+              </form>
+              <div
+                class="row-span-2 md:col-span-1 md:items-center md:px-5 md:pt-0 pt-3"
+              >
+                <div class="md:block hidden pb-5">
+                  اگر قبلا با ایمیل ثبت نام کرده اید، می توانید از اینجا وارد
+                  شوید:
+                </div>
+                <div>
+                  <a href="#" class="hover:shadow-md hover:shadow-gray-600"
+                    ><span
+                      class="border-l border-white bg-purple-900 text-white px-2 py-1"
+                      ><i class="fa fa-yahoo" aria-hidden="true"></i></span
+                    ><span class="bg-purple-900 text-white px-2 py-1"
+                      >ورود با یاهو ثبت نام شده</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-white w-full border-t border-gray-400">
+      <div class="container px-10 py-5 mx-auto">
+        <div class="grid md:grid-flow-col">
+          <div class="md:col-span-6">
+            <div class="grid md:grid-flow-row">
+              <div class="md:row-span-5">
+                <div class="grid grid-flow-col grid-cols-10 gap-x-4">
+                  <div class="col-span-3 text-[11px] text-gray-500">
+                    <ul>
+                      <li class="py-1">
+                        <a href="#"> خدمات شتاب نیاز روز </a>
+                      </li>
+                      <li class="py-1">
+                        <a href="#"> باشگاه مدیران و کارآفرینان مثلث </a>
+                      </li>
+                      <li class="py-1">
+                        <a href="#" class="flex items-center">
+                          <i
+                            class="fa fa-plus pl-1 text-amber-500"
+                            aria-hidden="true"
+                          ></i
+                          >درج آگهی رایگان</a
+                        >
+                      </li>
+                      <li class="py-1">
+                        <a href="#" class="flex">
+                          <img
+                            src="../assets/image/logos_pwa.svg"
+                            class="pl-1"
+                            alt=""
+                          />راهنمای نصب وب اپلیکیشن</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-span-2 text-[11px] text-gray-500">
+                    <ul>
+                      <li class="py-1"><a href="#"> تعرفه سرویس ها </a></li>
+                      <li class="py-1"><a href="#">قوانین درج آگهی</a></li>
+                      <li class="py-1"><a href="#">راهنمای سایت </a></li>
+                    </ul>
+                  </div>
+                  <div class="col-span-2 text-[11px] text-gray-500">
+                    <ul>
+                      <li class="py-1"><a href="#"> درباره ما</a></li>
+                      <li class="py-1"><a href="#">تماس با ما </a></li>
+                      <li class="py-1"><a href="#"> حفظ حریم شخصی </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row-span-1">
+                <p class="text-[11px] pt-2 text-gray-700">
+                  مسئولیت آگهی ها بر عهده آگهی دهندگان می باشد. فعالیت های این
+                  سایت تابع قوانین و مقررات جمهوری اسلامی ایران است.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-2 flex items-center justify-center text-[11px] text-gray-500"
+          >
+            <div>
+              <img
+                src="../assets/image/ecunion.jpg"
+                class="pl-1 w-[70px]"
+                alt=""
+              />
+            </div>
+            <div>
+              <img src="../assets/image/81.png" class="pr-1 w-[70px]" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
